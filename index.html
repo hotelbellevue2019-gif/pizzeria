@@ -7,654 +7,499 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --gold:#c9a84c;--gold2:#e8c97a;
-  --dark:#0a0a14;--dark2:#10101e;
-  --accent:#1a1a3e;
+  --gold:#c9a84c;--gold2:#e8c97a;--gold3:#f5dfa0;
+  --dark:#080d08;--dark2:#0f1a0f;--dark3:#162016;
+  --green:#1a3d22;--green2:#2d5a3d;
+  --cream:#fdf8ee;--red:#cc1111;
 }
-body{font-family:'Montserrat',sans-serif;background:var(--dark);color:#fff;overflow-x:hidden;min-height:100vh;}
-
-/* ══ LANG BAR ══ */
-.lang-bar{
-  position:fixed;top:0;left:0;right:0;z-index:999;
-  background:rgba(10,10,20,0.97);
-  display:flex;justify-content:flex-end;align-items:center;
-  padding:6px 14px;gap:6px;
-  border-bottom:1px solid rgba(201,168,76,0.2);
-  backdrop-filter:blur(10px);
+body{
+  font-family:'Montserrat',sans-serif;
+  background:var(--dark);
+  color:#fff;
+  overflow-x:hidden;
+  min-height:100vh;
 }
-.lang-btn{
-  padding:5px 14px;border-radius:20px;
-  border:1px solid rgba(201,168,76,0.35);
-  background:transparent;color:rgba(255,255,255,0.4);
-  font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;
-  letter-spacing:1px;cursor:pointer;transition:all 0.2s;
-}
-.lang-btn.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;border-color:transparent;}
-.lang-btn:hover:not(.active){color:var(--gold2);border-color:var(--gold);}
 
 /* ══ HERO ══ */
 .hero{
-  position:relative;min-height:500px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;overflow:hidden;padding:60px 20px 80px;margin-top:30px;
+  position:relative;
+  min-height:420px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  overflow:hidden;
+  padding:30px 20px 60px;
 }
-.hero-bg{
+.hero-img{
   position:absolute;inset:0;
-  background:url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/1f/e8/99/caption.jpg?w=900&h=-1&s=1') center/cover no-repeat;
-  filter:brightness(0.22) saturate(0.8) hue-rotate(200deg);
+  background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=90') center/cover no-repeat;
+  filter:brightness(0.35) saturate(1.2);
 }
 .hero-overlay{
   position:absolute;inset:0;
   background:
-    radial-gradient(ellipse 90% 60% at 50% 20%, rgba(100,120,255,0.08) 0%, transparent 65%),
-    linear-gradient(to bottom, rgba(10,10,20,0.1) 0%, rgba(10,10,20,0.95) 100%);
+    radial-gradient(ellipse at top, rgba(201,168,76,0.08) 0%, transparent 60%),
+    linear-gradient(to bottom, rgba(8,13,8,0.2) 0%, rgba(8,13,8,0.85) 100%);
 }
-.gold-bar-top{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold2),var(--gold),transparent);}
-.hero-content{position:relative;z-index:2;width:100%;}
+.gold-border-top{
+  position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,transparent,var(--gold),var(--gold2),var(--gold),transparent);
+}
+.hero-content{position:relative;z-index:2;}
 
-.logos-row{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;}
-.logo-main{width:180px;filter:drop-shadow(0 4px 24px rgba(201,168,76,0.25));}
-.logo-side{width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 2px 12px rgba(0,0,0,0.6));background:rgba(255,255,255,0.06);border-radius:50%;padding:5px;}
-.logo-div{width:1px;height:52px;background:rgba(201,168,76,0.18);}
-.stars{color:var(--gold);letter-spacing:5px;font-size:11px;margin-bottom:16px;}
+/* Logo */
+.logo-wrap{
+  width:220px;margin:0 auto 16px;
+  filter:drop-shadow(0 4px 24px rgba(201,168,76,0.35));
+}
+.logo-wrap img{width:100%;height:auto;}
 
-.welcome-line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(255,255,255,0.55);margin-bottom:3px;}
-.welcome-ar-line{font-family:'Amiri',serif;font-size:18px;color:var(--gold2);direction:rtl;margin-bottom:3px;}
-.location-line{font-size:9px;letter-spacing:3px;color:rgba(255,255,255,0.25);margin-bottom:18px;text-transform:uppercase;}
+.welcome-text{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:15px;
+  color:var(--gold2);letter-spacing:1px;
+  margin-bottom:10px;opacity:0.9;
+}
+.hotel-tagline{
+  font-size:10px;letter-spacing:4px;
+  color:rgba(255,255,255,0.45);
+  text-transform:uppercase;margin-bottom:18px;
+}
 
+/* Beach order banner */
 .beach-banner{
-  background:linear-gradient(135deg,rgba(100,120,255,0.08),rgba(201,168,76,0.06));
-  border:1px solid rgba(201,168,76,0.2);border-radius:14px;
-  padding:12px 16px;max-width:340px;margin:0 auto;
+  background:linear-gradient(135deg,rgba(201,168,76,0.12),rgba(201,168,76,0.05));
+  border:1px solid rgba(201,168,76,0.3);
+  border-radius:12px;
+  padding:12px 18px;
   display:flex;align-items:center;gap:10px;
+  max-width:340px;margin:0 auto;
 }
-.beach-txt strong{font-size:9px;color:var(--gold);letter-spacing:1.5px;display:block;margin-bottom:3px;font-weight:700;}
-.beach-txt small{font-size:9px;color:rgba(255,255,255,0.35);line-height:1.5;display:block;}
-.beach-logos{display:flex;gap:5px;align-items:center;flex-shrink:0;}
-.beach-logo-sm{width:28px;height:28px;object-fit:contain;}
+.beach-icon{font-size:22px;}
+.beach-info{text-align:left;}
+.beach-info p{font-size:10px;letter-spacing:1px;color:var(--gold);font-weight:600;margin-bottom:2px;}
+.beach-info small{font-size:10px;color:rgba(255,255,255,0.5);line-height:1.4;display:block;}
 
-.wave-div{position:absolute;bottom:0;left:0;right:0;height:45px;overflow:hidden;}
+/* Wave divider */
+.wave-div{
+  position:absolute;bottom:0;left:0;right:0;
+  height:50px;overflow:hidden;
+}
 .wave-div svg{display:block;width:100%;height:100%;}
 
 /* ══ NAV ══ */
 .nav{
-  position:sticky;top:30px;z-index:100;
-  background:rgba(10,10,20,0.97);
-  border-bottom:1px solid rgba(201,168,76,0.15);
+  position:sticky;top:0;z-index:100;
+  background:rgba(8,13,8,0.97);
+  border-bottom:1px solid rgba(201,168,76,0.2);
   display:flex;overflow-x:auto;scrollbar-width:none;
   backdrop-filter:blur(10px);
 }
 .nav::-webkit-scrollbar{display:none}
 .nav-btn{
-  flex-shrink:0;padding:13px 13px;
+  flex-shrink:0;padding:14px 14px;
   background:none;border:none;border-bottom:2px solid transparent;
-  color:rgba(255,255,255,0.35);
-  font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:1.2px;
-  cursor:pointer;transition:all 0.2s;white-space:nowrap;
+  color:rgba(255,255,255,0.4);
+  font-family:'Montserrat',sans-serif;font-size:9px;
+  letter-spacing:1.5px;cursor:pointer;
+  transition:all 0.25s;white-space:nowrap;
   position:relative;top:1px;text-transform:uppercase;
 }
 .nav-btn.active{color:var(--gold2);border-bottom-color:var(--gold);}
+.nav-btn:hover{color:rgba(201,168,76,0.7);}
 
 /* ══ SECTIONS ══ */
-.section{display:none;padding:26px 18px 40px;}
+.section{display:none;padding:28px 18px 40px;}
 .section.active{display:block;}
-.sec-header{text-align:center;margin-bottom:26px;}
-.sec-icon{font-size:26px;margin-bottom:6px;}
-.sec-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--gold2);margin-bottom:3px;}
-.sec-title-ar{font-family:'Amiri',serif;font-size:28px;color:var(--gold2);margin-bottom:3px;}
-.sec-sub{font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:10px;}
-.sec-line{display:flex;align-items:center;gap:8px;max-width:160px;margin:0 auto;}
+
+.sec-header{text-align:center;margin-bottom:28px;}
+.sec-icon{font-size:28px;margin-bottom:8px;}
+.sec-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;font-weight:600;
+  color:var(--gold2);
+  margin-bottom:4px;
+}
+.sec-line{
+  display:flex;align-items:center;gap:8px;
+  max-width:180px;margin:0 auto;
+}
 .sl{flex:1;height:1px;background:linear-gradient(to right,transparent,var(--gold));}
 .sl.r{background:linear-gradient(to left,transparent,var(--gold));}
 .sd{width:5px;height:5px;border-radius:50%;background:var(--gold);}
 
-.brand-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.15);border-radius:30px;padding:6px 14px;margin:0 auto 20px;}
-.brand-badge img{width:22px;height:22px;object-fit:contain;}
-.brand-badge span{font-size:9px;letter-spacing:2px;color:var(--gold);font-weight:600;}
+/* Category */
+.cat-row{display:flex;align-items:center;gap:10px;margin:22px 0 14px;}
+.cat-label{
+  font-size:9px;letter-spacing:2.5px;font-weight:700;
+  color:var(--gold);text-transform:uppercase;white-space:nowrap;
+}
+.cat-rule{flex:1;height:1px;background:rgba(201,168,76,0.15);}
 
-.cat-row{display:flex;align-items:center;gap:10px;margin:20px 0 12px;}
-.cat-label{font-size:9px;letter-spacing:2px;font-weight:700;color:var(--gold);text-transform:uppercase;white-space:nowrap;}
-.cat-rule{flex:1;height:1px;background:rgba(201,168,76,0.1);}
-
-.mitem{display:flex;align-items:flex-start;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(255,255,255,0.05);gap:12px;}
+/* Menu item */
+.mitem{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  padding:11px 0;
+  border-bottom:1px solid rgba(255,255,255,0.05);gap:14px;
+}
 .mitem:last-child{border-bottom:none;}
-.mname{font-size:12px;font-weight:600;color:#fff;line-height:1.3;}
-.mdesc{font-size:10px;color:rgba(255,255,255,0.28);margin-top:3px;font-style:italic;line-height:1.4;}
-.mprice{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;color:var(--gold2);white-space:nowrap;flex-shrink:0;}
+.mname{font-size:12px;font-weight:600;color:#fff;letter-spacing:0.4px;line-height:1.3;}
+.mdesc{font-size:10px;color:rgba(255,255,255,0.35);margin-top:3px;font-style:italic;line-height:1.4;}
+.mprice{
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;font-weight:600;
+  color:var(--gold2);white-space:nowrap;flex-shrink:0;
+}
 
-.pitem{display:flex;align-items:flex-start;justify-content:space-between;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.05);gap:12px;}
+/* Prestige items */
+.pitem{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  padding:13px 0;
+  border-bottom:1px solid rgba(255,255,255,0.05);gap:14px;
+}
 .pitem:last-child{border-bottom:none;}
-.pname{font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:rgba(255,255,255,0.88);}
-.pprice{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;color:var(--gold2);white-space:nowrap;flex-shrink:0;}
+.pname{
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;font-style:italic;color:rgba(255,255,255,0.9);
+}
+.pprice{
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;font-weight:700;color:var(--gold2);white-space:nowrap;flex-shrink:0;
+}
 
-.pack-card{border:1px solid rgba(201,168,76,0.18);border-radius:14px;padding:18px;margin:10px 0;background:linear-gradient(135deg,rgba(40,50,100,0.2),rgba(10,10,20,0.5));position:relative;overflow:hidden;}
-.pack-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
-.ptitle{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--gold2);margin-bottom:6px;}
-.pdetails{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
-.pbig{font-family:'Cormorant Garamond',serif;font-size:24px;color:#fff;font-weight:700;margin-top:10px;}
-.pbig span{font-size:10px;color:var(--gold);font-family:'Montserrat',sans-serif;}
+/* Pack card */
+.pack-card{
+  border:1px solid rgba(201,168,76,0.22);
+  border-radius:14px;padding:18px;margin:10px 0;
+  background:linear-gradient(135deg,rgba(45,90,61,0.22),rgba(15,26,15,0.4));
+  position:relative;overflow:hidden;
+}
+.pack-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.ptitle{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;font-weight:700;color:var(--gold2);margin-bottom:6px;
+}
+.pdetails{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.7;}
+.pbig{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;color:#fff;font-weight:700;margin-top:10px;
+}
+.pbig span{font-size:11px;color:var(--gold);font-family:'Montserrat',sans-serif;font-weight:400;}
 
-.ice{border:1px solid rgba(100,170,255,0.1);border-radius:12px;padding:14px;margin:8px 0;background:linear-gradient(135deg,rgba(20,40,100,0.2),rgba(10,10,20,0.5));}
-.iname{font-family:'Cormorant Garamond',serif;font-size:15px;color:#a8d4ff;margin-bottom:3px;}
-.idesc{font-size:10px;color:rgba(255,255,255,0.28);font-style:italic;}
+/* Ice card */
+.ice{
+  border:1px solid rgba(120,180,255,0.12);
+  border-radius:12px;padding:14px;margin:8px 0;
+  background:linear-gradient(135deg,rgba(20,50,90,0.25),rgba(8,13,8,0.4));
+}
+.iname{
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;color:#a8d4ff;margin-bottom:3px;
+}
+.idesc{font-size:10px;color:rgba(255,255,255,0.3);font-style:italic;}
 .iprice{font-family:'Cormorant Garamond',serif;font-size:16px;color:#a8d4ff;font-weight:700;margin-top:6px;}
 
+/* Boisson 2-col */
 .bois-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;}
-.bitem{padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+.bitem{
+  padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.04);
+}
 .bitem:nth-child(odd){padding-right:10px;border-right:1px solid rgba(255,255,255,0.04);}
 .bitem:nth-child(even){padding-left:10px;}
-.bname{font-size:10px;color:rgba(255,255,255,0.6);}
+.bname{font-size:10px;color:rgba(255,255,255,0.75);}
 .bprice{font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold);margin-top:1px;}
 
 /* ══ FOOTER ══ */
-.footer{text-align:center;padding:30px 18px 50px;border-top:1px solid rgba(201,168,76,0.1);}
-.footer-logos{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:16px;}
-.footer-logo-main{width:120px;opacity:0.7;}
-.footer-logo-side{width:42px;height:42px;object-fit:contain;opacity:0.45;}
-.footer-closing{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--gold2);margin-bottom:4px;}
-.footer-closing-ar{font-family:'Amiri',serif;font-size:18px;color:var(--gold2);direction:rtl;margin-bottom:4px;}
-.footer-sub{font-size:9px;color:rgba(255,255,255,0.25);letter-spacing:1px;margin-bottom:12px;}
-.gold-dots{color:var(--gold);letter-spacing:8px;font-size:9px;margin:12px 0;}
-.footer-info{font-size:9px;color:rgba(255,255,255,0.18);letter-spacing:1.2px;line-height:2.2;text-transform:uppercase;}
-.contact-info{font-size:10px;color:rgba(201,168,76,0.45);margin-top:8px;line-height:1.8;}
-
-/* RTL */
-.rtl{direction:rtl;}
-.rtl .cat-row{flex-direction:row-reverse;}
-.rtl .sl{background:linear-gradient(to left,transparent,var(--gold));}
-.rtl .sl.r{background:linear-gradient(to right,transparent,var(--gold));}
-.rtl .bitem:nth-child(odd){padding-right:0;padding-left:10px;border-right:none;border-left:1px solid rgba(255,255,255,0.04);}
-.rtl .bitem:nth-child(even){padding-left:0;padding-right:10px;}
+.footer{
+  text-align:center;padding:30px 18px 40px;
+  border-top:1px solid rgba(201,168,76,0.15);
+  background:linear-gradient(to bottom,transparent,rgba(201,168,76,0.03));
+}
+.footer-logo{width:120px;margin:0 auto 14px;opacity:0.7;}
+.footer-logo img{width:100%;}
+.closing{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:17px;
+  color:var(--gold2);margin-bottom:8px;
+}
+.footer-info{font-size:10px;color:rgba(255,255,255,0.25);letter-spacing:2px;line-height:2;}
+.gold-dots{color:var(--gold);letter-spacing:6px;font-size:10px;margin:10px 0;}
 </style>
 </head>
 <body>
 
-<div class="lang-bar">
-  <button class="lang-btn" onclick="setLang('ar')">عربية</button>
-  <button class="lang-btn active" onclick="setLang('fr')">FR</button>
-  <button class="lang-btn" onclick="setLang('en')">EN</button>
-</div>
-
-<!-- HERO -->
+<!-- ══ HERO ══ -->
 <div class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-img"></div>
   <div class="hero-overlay"></div>
-  <div class="gold-bar-top"></div>
+  <div class="gold-border-top"></div>
+
   <div class="hero-content">
-    <div class="logos-row">
-      <img class="logo-side" src="/mnt/user-data/uploads/272b1fd3-4712-488c-88f7-c2ef535efbcb-removebg-preview.png" alt="Plage" onerror="this.style.display='none'">
-      <div class="logo-div"></div>
-      <img class="logo-main" src="/mnt/user-data/uploads/8de73525-bb2b-40eb-b806-d1c5fd488664-removebg-preview.png" alt="Hotel Belle Vue" onerror="this.style.display='none'">
-      <div class="logo-div"></div>
-      <img class="logo-side" src="/mnt/user-data/uploads/642b3120-53e9-43d6-a92e-b2af2b7a29d8-removebg-preview.png" alt="Pizzeria" onerror="this.style.display='none'">
-    </div>
-    <div class="stars">★ ★ ★ ★</div>
-    <div id="hero-welcome"></div>
-    <div class="beach-banner">
-      <div style="font-size:26px;">🏖️</div>
-      <div class="beach-txt">
-        <strong id="beach-title"></strong>
-        <small id="beach-sub"></small>
+    <div class="logo-wrap">
+      <img src="/mnt/user-data/uploads/8de73525-bb2b-40eb-b806-d1c5fd488664-removebg-preview.png"
+           onerror="this.style.display='none';document.getElementById('fallback-logo').style.display='block'"
+           alt="Hotel Belle Vue Logo">
+      <div id="fallback-logo" style="display:none;font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#cc1111;text-shadow:0 2px 20px rgba(0,0,0,0.8);">
+        <span style="color:#e8c97a;">☀</span> Hotel Belle Vue
       </div>
-      <div class="beach-logos">
-        <img class="beach-logo-sm" src="/mnt/user-data/uploads/272b1fd3-4712-488c-88f7-c2ef535efbcb-removebg-preview.png" onerror="this.style.display='none'" alt="">
-        <img class="beach-logo-sm" src="/mnt/user-data/uploads/642b3120-53e9-43d6-a92e-b2af2b7a29d8-removebg-preview.png" onerror="this.style.display='none'" alt="">
+    </div>
+
+    <div class="welcome-text">
+      مرحباً بكم في فندق المنظر الجميل — Bienvenue à l'Hôtel Belle Vue
+    </div>
+    <div class="hotel-tagline">SKIKDA · ALGÉRIE · DEPUIS 2000</div>
+
+    <div class="beach-banner">
+      <div class="beach-icon">🏖️</div>
+      <div class="beach-info">
+        <p>COMMANDEZ DEPUIS LA PLAGE</p>
+        <small>Notre service vous rejoint directement au bord de la mer · Pizzeria &amp; Restaurant disponibles</small>
       </div>
     </div>
   </div>
-  <div class="wave-div"><svg viewBox="0 0 400 45" preserveAspectRatio="none" fill="#0a0a14"><path d="M0,28 Q80,5 160,22 Q240,40 320,18 Q370,5 400,22 L400,45 L0,45Z"/></svg></div>
+
+  <div class="wave-div">
+    <svg viewBox="0 0 400 50" preserveAspectRatio="none" fill="#080d08">
+      <path d="M0,30 Q100,0 200,25 Q300,50 400,20 L400,50 L0,50Z"/>
+    </svg>
+  </div>
 </div>
 
-<!-- NAV -->
-<nav class="nav" id="main-nav"></nav>
+<!-- ══ NAV ══ -->
+<nav class="nav">
+  <button class="nav-btn active" onclick="show('prestige')">✦ PRESTIGE</button>
+  <button class="nav-btn" onclick="show('pizzas')">🍕 PIZZAS</button>
+  <button class="nav-btn" onclick="show('souffles')">🫓 SOUFFLÉS</button>
+  <button class="nav-btn" onclick="show('tacos')">🌮 TACOS</button>
+  <button class="nav-btn" onclick="show('desserts')">🍦 DESSERTS</button>
+  <button class="nav-btn" onclick="show('boissons')">☕ BOISSONS</button>
+  <button class="nav-btn" onclick="show('packs')">🎁 PACKS</button>
+</nav>
 
-<!-- SECTIONS -->
-<div id="sections-container"></div>
-
-<!-- FOOTER -->
-<div class="footer">
-  <div class="footer-logos">
-    <img class="footer-logo-side" src="/mnt/user-data/uploads/272b1fd3-4712-488c-88f7-c2ef535efbcb-removebg-preview.png" onerror="this.style.display='none'" alt="">
-    <img class="footer-logo-main" src="/mnt/user-data/uploads/8de73525-bb2b-40eb-b806-d1c5fd488664-removebg-preview.png" onerror="this.style.display='none'" alt="">
-    <img class="footer-logo-side" src="/mnt/user-data/uploads/642b3120-53e9-43d6-a92e-b2af2b7a29d8-removebg-preview.png" onerror="this.style.display='none'" alt="">
+<!-- ══ RESTAURANT PRESTIGE ══ -->
+<div class="section active" id="prestige">
+  <div class="sec-header">
+    <div class="sec-icon">✦</div>
+    <div class="sec-title">Restaurant Prestige</div>
+    <div class="sec-line"><div class="sl"></div><div class="sd"></div><div class="sl r"></div></div>
   </div>
-  <div id="footer-closing"></div>
+
+  <div class="cat-row"><div class="cat-rule"></div><div class="cat-label">Les Entrées — Froides</div><div class="cat-rule"></div></div>
+  <div class="pitem"><div class="pname">Salade de Poulet</div><div class="pprice">850 DA</div></div>
+  <div class="pitem"><div class="pname">Salade Fraîcheur</div><div class="pprice">900 DA</div></div>
+  <div class="pitem"><div class="pname">Salade de Thon</div><div class="pprice">1000 DA</div></div>
+  <div class="pitem"><div class="pname">Salade César</div><div class="pprice">1200 DA</div></div>
+  <div class="pitem"><div class="pname">Salade de Crevette</div><div class="pprice">1500 DA</div></div>
+  <div class="pitem"><div class="pname">Cocktail de Crevette</div><div class="pprice">1500 DA</div></div>
+
+  <div class="cat-row"><div class="cat-rule"></div><div class="cat-label">Les Entrées — Chaudes</div><div class="cat-rule"></div></div>
+  <div class="pitem"><div class="pname">Omelette au choix</div><div class="pprice">800 DA</div></div>
+  <div class="pitem"><div class="pname">Soupe du Jour</div><div class="pprice">900 DA</div></div>
+  <div class="pitem"><div class="pname">Gratin aux choix</div><div class="pprice">1500 DA</div></div>
+  <div class="pitem"><div class="pname">Crevettes sauce tomate / sautée</div><div class="pprice">1800 DA</div></div>
+
+  <div class="cat-row"><div class="cat-rule"></div><div class="cat-label">Les Pâtes</div><div class="cat-rule"></div></div>
+  <div class="pitem"><div class="pname">Spaghetti Alfredo</div><div class="pprice">1200 DA</div></div>
+  <div class="pitem"><div class="pname">Spaghetti Bolognaise</div><div class="pprice">1500 DA</div></div>
+  <div class="pitem"><div class="pname">Spaghetti sauce crevettes</div><div class="pprice">1800 DA</div></div>
+
+  <div class="cat-row"><div class="cat-rule"></div><div class="cat-label">Les Suites</div><div class="cat-rule"></div></div>
+  <div class="pitem"><div class="pname">Escalope de poulet</div><div class="pprice">1650 DA</div></div>
+  <div class="pitem"><div class="pname">Entrecôte</div><div class="pprice">2300 DA</div></div>
+  <div class="pitem"><div class="pname">Poisson (Selon l'Arrivage)</div><div class="pprice">2300 DA</div></div>
+  <div class="pitem"><div class="pname">Filet au Choix</div><div class="pprice">2500 DA</div></div>
+  <div class="pitem"><div class="pname">Émincé de veau Stroganoff</div><div class="pprice">2500 DA</div></div>
+  <div class="pitem"><div class="pname">Côte d'agneau grillé</div><div class="pprice">2500 DA</div></div>
+  <div class="pitem"><div class="pname">Foie Grillé</div><div class="pprice">3200 DA</div></div>
+  <div class="pitem"><div class="pname">Scampi de Crevettes</div><div class="pprice">3200 DA</div></div>
+
+  <div class="cat-row"><div class="cat-rule"></div><div class="cat-label">Les Desserts</div><div class="cat-rule"></div></div>
+  <div class="pitem"><div class="pname">Tiramisu</div><div class="pprice">400 DA</div></div>
+  <div class="pitem"><div class="pname">Gâteau du jour</div><div class="pprice">450 DA</div></div>
+  <div class="pitem"><div class="pname">Crème Caramel</div><div class="pprice">450 DA</div></div>
+  <div class="pitem"><div class="pname">Mousse au Chocolat</div><div class="pprice">450 DA</div></div>
+  <div class="pitem"><div class="pname">Fondant au chocolat</div><div class="pprice">500 DA</div></div>
+  <div class="pitem"><div class="pname">Fruits de Saison</div><div class="pprice">500 DA</div></div>
+
+  <div class="cat-row"><div class="cat-rule"></div><div class="cat-label">Les Boissons — Prestige</div><div class="cat-rule"></div></div>
+  <div class="bois-grid">
+    <div class="bitem"><div class="bname">Eau Minéral Gazeuse 1L</div><div class="bprice">250 DA</div></div>
+    <div class="bitem"><div class="bname">Jus Naturel</div><div class="bprice">500 DA</div></div>
+    <div class="bitem"><div class="bname">Eau Minéral ½L</div><div class="bprice">150 DA</div></div>
+    <div class="bitem"><div class="bname">Café Espresso Capsule</div><div class="bprice">200 DA</div></div>
+    <div class="bitem"><div class="bname">Boissons Gazeuses 33CL</div><div class="bprice">200 DA</div></div>
+    <div class="bitem"><div class="bname">Café Noir</div><div class="bprice">200 DA</div></div>
+    <div class="bitem"><div class="bname">Boissons Gazeuses 1L</div><div class="bprice">300 DA</div></div>
+    <div class="bitem"><div class="bname">Cappuccino</div><div class="bprice">200 DA</div></div>
+    <div class="bitem"><div class="bname">Boisson Gazeuses Canettes</div><div class="bprice">200 DA</div></div>
+    <div class="bitem"><div class="bname">Chocolat Chaud</div><div class="bprice">200 DA</div></div>
+    <div class="bitem"><div class="bname">Jus 33CL</div><div class="bprice">200 DA</div></div>
+    <div class="bitem"><div class="bname">Café au Lait</div><div class="bprice">200 DA</div></div>
+    <div class="bitem"><div class="bname">Jus 1L</div><div class="bprice">300 DA</div></div>
+    <div class="bitem"><div class="bname">Thé / Tisane</div><div class="bprice">200 DA</div></div>
+  </div>
+</div>
+
+<!-- ══ PIZZAS ══ -->
+<div class="section" id="pizzas">
+  <div class="sec-header">
+    <div class="sec-icon">🍕</div>
+    <div class="sec-title">Nos Pizzas</div>
+    <div class="sec-line"><div class="sl"></div><div class="sd"></div><div class="sl r"></div></div>
+  </div>
+  <div class="cat-row"><div class="cat-rule"></div><div class="cat-label">SAUCE TOMATE</div><div class="cat-rule"></div></div>
+  <div class="mitem"><div><div class="mname">MARGHERITA</div><div class="mdesc">Sauce tomate / fromage / olive</div></div><div class="mprice">450 DA</div></div>
+  <div class="mitem"><div><div class="mname">VÉGÉTARIENNE</div><div class="mdesc">Aubergine / courgette / poivron / oignons / sauce tomate / fromage / olive</div></div><div class="mprice">550 DA</div></div>
+  <div class="mitem"><div><div class="mname">FORESTIÈRE</div><div class="mdesc">Sauce tomate / fromage / champignon / olive</div></div><div class="mprice">550 DA</div></div>
+  <div class="mitem"><div><div class="mname">VIANDE HACHÉE BOLOGNAISE</div><div class="mdesc">Sauce tomate / viande hachée / oignon / poivron / fromage / olive</div></div><div class="mprice">650 DA</div></div>
+  <div class="mitem"><div><div class="mname">POULET MARINÉ</div><div class="mdesc">Fromage / sauce tomate / poulet mariné</div></div><div class="mprice">650 DA</div></div>
+  <div class="mitem"><div><div class="mname">THON</div><div class="mdesc">Sauce tomate / fromage / olive / thon</div></div><div class="mprice">650 DA</div></div>
+  <div class="mitem"><div><div class="mname">PÉCHEURE</div><div class="mdesc">Sauce tomate / fromage / fruits de mer / olive</div></div><div class="mprice">800 DA</div></div>
+  <div class="mitem"><div><div class="mname">ROYALE</div><div class="mdesc">Sauce tomate / crevette / fromage / olive / calamar</div></div><div class="mprice">850 DA</div></div>
+  <div class="mitem"><div><div class="mname">4 SAISONS</div><div class="mdesc">Sauce tomate / viande hachée / champignon / thon / poulet / olive / fromage</div></div><div class="mprice">850 DA</div></div>
+  <div class="mitem"><div><div class="mname">4 FROMAGES</div><div class="mdesc">Camembert / Mozzarella / Cheddar / Gruyère</div></div><div class="mprice">900 DA</div></div>
+  <div class="mitem"><div><div class="mname">PIZZA BELLE VUE ⭐</div><div class="mdesc">Sauce tomate / fromage / olive / fruits de mer / viande hachée / câpre / salami</div></div><div class="mprice">1000 DA</div></div>
+
+  <div class="cat-row"><div class="cat-rule"></div><div class="cat-label">BOISÉES — SAUCE BLANCHE</div><div class="cat-rule"></div></div>
+  <div class="mitem"><div><div class="mname">VÉGÉTARIENNE</div><div class="mdesc">Sauce blanche / champignon / fromage / aubergine / courgette / poivron / olive</div></div><div class="mprice">650 DA</div></div>
+  <div class="mitem"><div><div class="mname">POULET</div><div class="mdesc">Sauce blanche / fromage / poulet / olive</div></div><div class="mprice">650 DA</div></div>
+  <div class="mitem"><div><div class="mname">4 FROMAGES</div><div class="mdesc">Sauce blanche / 4 fromages / sauce de fromage</div></div><div class="mprice">900 DA</div></div>
+</div>
+
+<!-- ══ SOUFFLÉS ══ -->
+<div class="section" id="souffles">
+  <div class="sec-header">
+    <div class="sec-icon">🫓</div>
+    <div class="sec-title">Nos Soufflés</div>
+    <div class="sec-line"><div class="sl"></div><div class="sd"></div><div class="sl r"></div></div>
+  </div>
+  <div class="mitem"><div><div class="mname">POULET</div><div class="mdesc">Sauce tomate / poulet / fromage</div></div><div class="mprice">500 DA</div></div>
+  <div class="mitem"><div><div class="mname">VIANDE HACHÉE</div><div class="mdesc">Fromage / viande haché / champignon</div></div><div class="mprice">600 DA</div></div>
+  <div class="mitem"><div><div class="mname">THON</div><div class="mdesc">Sauce tomate / thon / fromage</div></div><div class="mprice">600 DA</div></div>
+  <div class="mitem"><div><div class="mname">FROMAGES</div><div class="mdesc">4 fromages / sauce blanche</div></div><div class="mprice">750 DA</div></div>
+  <div class="mitem"><div><div class="mname">FRUITS DE MER</div><div class="mdesc">Sauce tomate / fromage / fruits de mer</div></div><div class="mprice">850 DA</div></div>
+</div>
+
+<!-- ══ TACOS ══ -->
+<div class="section" id="tacos">
+  <div class="sec-header">
+    <div class="sec-icon">🌮</div>
+    <div class="sec-title">Nos Tacos</div>
+    <div class="sec-line"><div class="sl"></div><div class="sd"></div><div class="sl r"></div></div>
+  </div>
+  <div class="mitem"><div><div class="mname">POULET</div></div><div class="mprice">550 DA</div></div>
+  <div class="mitem"><div><div class="mname">POULET DOUBLE FROMAGE</div></div><div class="mprice">700 DA</div></div>
+  <div class="mitem"><div><div class="mname">VIANDE HACHÉE</div></div><div class="mprice">650 DA</div></div>
+  <div class="mitem"><div><div class="mname">VIANDE HACHÉE DOUBLE FROMAGE</div></div><div class="mprice">700 DA</div></div>
+</div>
+
+<!-- ══ DESSERTS ══ -->
+<div class="section" id="desserts">
+  <div class="sec-header">
+    <div class="sec-icon">🍦</div>
+    <div class="sec-title">Desserts & Glaces</div>
+    <div class="sec-line"><div class="sl"></div><div class="sd"></div><div class="sl r"></div></div>
+  </div>
+  <div class="cat-row"><div class="cat-rule"></div><div class="cat-label">CRÊPES</div><div class="cat-rule"></div></div>
+  <div class="mitem"><div><div class="mname">CRÊPE À LA CONFITURE</div></div><div class="mprice">350 DA</div></div>
+  <div class="mitem"><div><div class="mname">CRÊPE AU MIEL</div></div><div class="mprice">350 DA</div></div>
+  <div class="mitem"><div><div class="mname">CRÊPE NUTELLA</div></div><div class="mprice">400 DA</div></div>
+  <div class="mitem"><div><div class="mname">CRÊPE NUTELLA BANANE</div></div><div class="mprice">500 DA</div></div>
+
+  <div class="cat-row"><div class="cat-rule"></div><div class="cat-label">GLACES</div><div class="cat-rule"></div></div>
+  <div class="mitem"><div><div class="mname">1 BOULE DE GLACE</div></div><div class="mprice">200 DA</div></div>
+  <div class="mitem"><div><div class="mname">2 BOULES DE GLACE</div></div><div class="mprice">350 DA</div></div>
+  <div class="ice"><div class="iname">COUPE ARC EN CIEL</div><div class="idesc">03 boules parfumées variées</div><div class="iprice">500 DA</div></div>
+  <div class="ice"><div class="iname">COUPE OREO</div><div class="idesc">03 boules parfumées variées</div><div class="iprice">550 DA</div></div>
+  <div class="ice"><div class="iname">COUPE FRAÎCHEUR FRUITY</div><div class="idesc">03 boules parfumées variées</div><div class="iprice">550 DA</div></div>
+  <div class="ice"><div class="iname">GLACE MIRADOR ⭐</div><div class="idesc">04 boules au choix &amp; fruits, crème chantilly</div><div class="iprice">700 DA</div></div>
+  <div class="ice"><div class="iname">COUPE « OSLO »</div><div class="idesc">05 boules parfumées variées, fruits, crème chantilly</div><div class="iprice">900 DA</div></div>
+</div>
+
+<!-- ══ BOISSONS ══ -->
+<div class="section" id="boissons">
+  <div class="sec-header">
+    <div class="sec-icon">☕</div>
+    <div class="sec-title">Nos Boissons</div>
+    <div class="sec-line"><div class="sl"></div><div class="sd"></div><div class="sl r"></div></div>
+  </div>
+  <div class="cat-row"><div class="cat-rule"></div><div class="cat-label">FROIDES</div><div class="cat-rule"></div></div>
+  <div class="bois-grid">
+    <div class="bitem"><div class="bname">Eau Minérale Gazeuse 0.5L</div><div class="bprice">100 DA</div></div>
+    <div class="bitem"><div class="bname">Eau Minérale Gazeuse 1.5L</div><div class="bprice">150 DA</div></div>
+    <div class="bitem"><div class="bname">Eau Minérale 0.5L</div><div class="bprice">100 DA</div></div>
+    <div class="bitem"><div class="bname">Eau Minérale 1.5L</div><div class="bprice">150 DA</div></div>
+    <div class="bitem"><div class="bname">Boisson Gazeuse 33CL</div><div class="bprice">200 DA</div></div>
+    <div class="bitem"><div class="bname">Boisson Gazeuse Canette</div><div class="bprice">200 DA</div></div>
+    <div class="bitem"><div class="bname">Boisson Gazeuse 1L</div><div class="bprice">250 DA</div></div>
+    <div class="bitem"><div class="bname">Jus 33CL</div><div class="bprice">200 DA</div></div>
+    <div class="bitem"><div class="bname">Jus 1L</div><div class="bprice">300 DA</div></div>
+    <div class="bitem"><div class="bname">Jus Naturel</div><div class="bprice">500 DA</div></div>
+  </div>
+  <div class="cat-row"><div class="cat-rule"></div><div class="cat-label">CHAUDES</div><div class="cat-rule"></div></div>
+  <div class="bois-grid">
+    <div class="bitem"><div class="bname">Café au Lait</div><div class="bprice">200 DA</div></div>
+    <div class="bitem"><div class="bname">Café Noir</div><div class="bprice">200 DA</div></div>
+    <div class="bitem"><div class="bname">Café Espresso Capsule</div><div class="bprice">200 DA</div></div>
+    <div class="bitem"><div class="bname">Capuccino</div><div class="bprice">200 DA</div></div>
+    <div class="bitem"><div class="bname">Thé</div><div class="bprice">200 DA</div></div>
+    <div class="bitem"><div class="bname">Tisane</div><div class="bprice">200 DA</div></div>
+    <div class="bitem"><div class="bname">Chocolat Chaud</div><div class="bprice">200 DA</div></div>
+    <div class="bitem"></div>
+  </div>
+</div>
+
+<!-- ══ PACKS ══ -->
+<div class="section" id="packs">
+  <div class="sec-header">
+    <div class="sec-icon">🎁</div>
+    <div class="sec-title">Offres Spéciales</div>
+    <div class="sec-line"><div class="sl"></div><div class="sd"></div><div class="sl r"></div></div>
+  </div>
+  <div class="pack-card">
+    <div class="ptitle">🎯 PACK TRIO</div>
+    <div class="pdetails">3 Pizzas Poulet Mariné<br>+ 1 BTL Coca Cola 1L OFFERTE</div>
+    <div class="pbig">1950 DA <span>/ pack</span></div>
+  </div>
+  <div class="pack-card">
+    <div class="ptitle">🎯 PACK QUATRO</div>
+    <div class="pdetails">4 Pizzas Margherita<br>+ 1 BTL Coca Cola 1L OFFERTE</div>
+    <div class="pbig">1800 DA <span>/ pack</span></div>
+  </div>
+  <div class="pack-card" style="background:linear-gradient(135deg,rgba(100,60,10,0.25),rgba(8,13,8,0.4));border-color:rgba(201,168,76,0.3);">
+    <div class="ptitle" style="color:var(--gold2);">👶 PACK ENFANT</div>
+    <div class="pdetails">1 Mini Pizza + 1 Boisson + 1 Dessert</div>
+    <div class="pbig" style="color:var(--gold2);">800 DA <span>/ pack</span></div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<div class="footer">
+  <div class="footer-logo">
+    <img src="/mnt/user-data/uploads/8de73525-bb2b-40eb-b806-d1c5fd488664-removebg-preview.png"
+         onerror="this.style.display='none'" alt="Logo">
+  </div>
+  <div class="closing">Bon Appétit &amp; شكراً لزيارتكم</div>
   <div class="gold-dots">✦ ✦ ✦</div>
-  <div class="footer-info">HÔTEL BELLE VUE · FILFILA · SKIKDA · ALGÉRIE<br>🏖️ Plage Privée · 🍕 Pizzeria · 🍽️ Restaurant Prestige</div>
-  <div class="contact-info">📞 07 90 72 02 09 &nbsp;·&nbsp; 05 58 45 43 45<br>📧 hotelbellevue6@yahoo.com</div>
+  <div class="footer-info">
+    HÔTEL BELLE VUE · SKIKDA · ALGÉRIE<br>
+    🏖️ Service disponible à la plage<br>
+    🍕 Pizzeria · 🍽️ Restaurant Prestige
+  </div>
 </div>
 
 <script>
-// ══════════════════════════════════════════
-// ALL CONTENT IN 3 LANGUAGES
-// ══════════════════════════════════════════
-const T = {
-  fr: {
-    dir: 'ltr',
-    welcome: `<div class="welcome-line">Bienvenue dans votre espace gastronomique</div><div class="location-line">Filfila · Skikda · Algérie</div>`,
-    beach_title: 'COMMANDEZ DEPUIS LA PLAGE',
-    beach_sub: 'Nos serveurs vous rejoignent directement sur la plage · Pizzeria & Restaurant Prestige',
-    footer: `<div class="footer-closing">Merci de votre visite · Bon Appétit</div><div class="footer-sub">Nous espérons vous revoir très bientôt</div>`,
-    nav: ['✦ Prestige','🍕 Pizzas','🫓 Soufflés','🌮 Tacos','🍦 Desserts','☕ Boissons','🎁 Packs'],
-    sections: [
-      { id:'prestige', icon:'✦', title:'Restaurant Prestige', sub:'Gastronomie · Cuisine Raffinée',
-        cats:[
-          { label:'Entrées Froides', items:[
-            {n:'Salade de Poulet',p:'850 DA'},{n:'Salade Fraîcheur',p:'900 DA'},
-            {n:'Salade de Thon',p:'1000 DA'},{n:'Salade César',p:'1200 DA'},
-            {n:'Salade de Crevette',p:'1500 DA'},{n:'Cocktail de Crevette',p:'1500 DA'}]},
-          { label:'Entrées Chaudes', items:[
-            {n:'Omelette au choix',p:'800 DA'},{n:'Soupe du Jour',p:'900 DA'},
-            {n:'Gratin aux choix',p:'1500 DA'},{n:'Crevettes sauce tomate / sautée',p:'1800 DA'}]},
-          { label:'Les Pâtes', items:[
-            {n:'Spaghetti Alfredo',p:'1200 DA'},{n:'Spaghetti Bolognaise',p:'1500 DA'},
-            {n:'Spaghetti sauce crevettes',p:'1800 DA'}]},
-          { label:'Les Suites', items:[
-            {n:'Escalope de poulet',p:'1650 DA'},{n:'Entrecôte',p:'2300 DA'},
-            {n:"Poisson (Selon l'Arrivage)",p:'2300 DA'},{n:'Filet au Choix',p:'2500 DA'},
-            {n:'Émincé de veau Stroganoff',p:'2500 DA'},{n:"Côte d'agneau grillé",p:'2500 DA'},
-            {n:'Foie Grillé',p:'3200 DA'},{n:'Scampi de Crevettes',p:'3200 DA'}]},
-          { label:'Les Desserts', items:[
-            {n:'Tiramisu',p:'400 DA'},{n:'Gâteau du jour',p:'450 DA'},
-            {n:'Crème Caramel',p:'450 DA'},{n:'Mousse au Chocolat',p:'450 DA'},
-            {n:'Fondant au chocolat',p:'500 DA'},{n:'Fruits de Saison',p:'500 DA'}]}
-        ], type:'prestige'
-      },
-      { id:'pizzas', icon:'🍕', title:'Nos Pizzas', sub:'Pizzeria Belle Vue', brand:true,
-        cats:[
-          { label:'Sauce Tomate', items:[
-            {n:'Margherita',d:'Sauce tomate / fromage / olive',p:'450 DA'},
-            {n:'Végétarienne',d:'Aubergine / courgette / poivron / oignons / fromage / olive',p:'550 DA'},
-            {n:'Forestière',d:'Sauce tomate / fromage / champignon / olive',p:'550 DA'},
-            {n:'Viande Hachée Bolognaise',d:'Viande hachée / oignon / poivron / fromage / olive',p:'650 DA'},
-            {n:'Poulet Mariné',d:'Fromage / sauce tomate / poulet mariné',p:'650 DA'},
-            {n:'Thon',d:'Sauce tomate / fromage / olive / thon',p:'650 DA'},
-            {n:'Pécheure',d:'Sauce tomate / fromage / fruits de mer / olive',p:'800 DA'},
-            {n:'Royale',d:'Sauce tomate / crevette / fromage / olive / calamar',p:'850 DA'},
-            {n:'4 Saisons',d:'Viande hachée / champignon / thon / poulet / olive / fromage',p:'850 DA'},
-            {n:'4 Fromages',d:'Camembert / Mozzarella / Cheddar / Gruyère',p:'900 DA'},
-            {n:'Pizza Belle Vue ⭐',d:'Fromage / olive / fruits de mer / viande hachée / câpre / salami',p:'1000 DA'}]},
-          { label:'Boisées — Sauce Blanche', items:[
-            {n:'Végétarienne',d:'Sauce blanche / champignon / fromage / aubergine / courgette / poivron / olive',p:'650 DA'},
-            {n:'Poulet',d:'Sauce blanche / fromage / poulet / olive',p:'650 DA'},
-            {n:'4 Fromages',d:'Sauce blanche / 4 fromages / sauce de fromage',p:'900 DA'}]}
-        ], type:'standard'
-      },
-      { id:'souffles', icon:'🫓', title:'Nos Soufflés', sub:'',
-        cats:[{ label:'', items:[
-          {n:'Poulet',d:'Sauce tomate / poulet / fromage',p:'500 DA'},
-          {n:'Viande Hachée',d:'Fromage / viande haché / champignon',p:'600 DA'},
-          {n:'Thon',d:'Sauce tomate / thon / fromage',p:'600 DA'},
-          {n:'Fromages',d:'4 fromages / sauce blanche',p:'750 DA'},
-          {n:'Fruits de Mer',d:'Sauce tomate / fromage / fruits de mer',p:'850 DA'}]}], type:'standard'
-      },
-      { id:'tacos', icon:'🌮', title:'Nos Tacos', sub:'',
-        cats:[{ label:'', items:[
-          {n:'Poulet',p:'550 DA'},{n:'Poulet Double Fromage',p:'700 DA'},
-          {n:'Viande Hachée',p:'650 DA'},{n:'Viande Hachée Double Fromage',p:'700 DA'}]}], type:'standard'
-      },
-      { id:'desserts', icon:'🍦', title:'Desserts & Glaces', sub:'',
-        cats:[
-          { label:'Crêpes', items:[
-            {n:'Crêpe à la Confiture',p:'350 DA'},{n:'Crêpe au Miel',p:'350 DA'},
-            {n:'Crêpe Nutella',p:'400 DA'},{n:'Crêpe Nutella Banane',p:'500 DA'}]},
-          { label:'Glaces', items:[
-            {n:'1 Boule de Glace',p:'200 DA'},{n:'2 Boules de Glace',p:'350 DA'}]},
-          { label:'Coupes Spéciales', type:'ice', items:[
-            {n:'Coupe Arc en Ciel',d:'03 boules parfumées variées',p:'500 DA'},
-            {n:'Coupe Oreo',d:'03 boules parfumées variées',p:'550 DA'},
-            {n:'Coupe Fraîcheur Fruity',d:'03 boules parfumées variées',p:'550 DA'},
-            {n:'Glace Mirador ⭐',d:'04 boules au choix & fruits, crème chantilly',p:'700 DA'},
-            {n:'Coupe « Oslo »',d:'05 boules parfumées, fruits, crème chantilly',p:'900 DA'}]}
-        ], type:'mixed'
-      },
-      { id:'boissons', icon:'☕', title:'Nos Boissons', sub:'',
-        cats:[
-          { label:'Froides', type:'grid', items:[
-            {n:'Eau Gazeuse 0.5L',p:'100 DA'},{n:'Eau Gazeuse 1.5L',p:'150 DA'},
-            {n:'Eau Minérale 0.5L',p:'100 DA'},{n:'Eau Minérale 1.5L',p:'150 DA'},
-            {n:'Boisson Gazeuse 33CL',p:'200 DA'},{n:'Boisson Gazeuse Canette',p:'200 DA'},
-            {n:'Boisson Gazeuse 1L',p:'250 DA'},{n:'Jus 33CL',p:'200 DA'},
-            {n:'Jus 1L',p:'300 DA'},{n:'Jus Naturel',p:'500 DA'}]},
-          { label:'Chaudes', type:'grid', items:[
-            {n:'Café au Lait',p:'200 DA'},{n:'Café Noir',p:'200 DA'},
-            {n:'Café Espresso Capsule',p:'200 DA'},{n:'Capuccino',p:'200 DA'},
-            {n:'Thé',p:'200 DA'},{n:'Tisane',p:'200 DA'},
-            {n:'Chocolat Chaud',p:'200 DA'},{n:'',p:''}]}
-        ], type:'drinks'
-      },
-      { id:'packs', icon:'🎁', title:'Offres Spéciales', sub:'',
-        packs:[
-          {title:'🎯 Pack Trio',details:'3 Pizzas Poulet Mariné\n+ 1 BTL Coca Cola 1L OFFERTE',price:'1950 DA'},
-          {title:'🎯 Pack Quatro',details:'4 Pizzas Margherita\n+ 1 BTL Coca Cola 1L OFFERTE',price:'1800 DA'},
-          {title:'👶 Pack Enfant',details:'1 Mini Pizza + 1 Boisson + 1 Dessert',price:'800 DA',special:true}
-        ], type:'packs'
-      }
-    ]
-  },
-
-  ar: {
-    dir: 'rtl',
-    welcome: `<div class="welcome-ar-line">أهلاً وسهلاً في فندق المنظر الجميل</div><div class="location-line">فيلفيلة · سكيكدة · الجزائر</div>`,
-    beach_title: 'اطلب من الشاطئ مباشرة',
-    beach_sub: 'فريقنا يصلك على الرمال · البيتزيريا ومطعم بريستيج في خدمتك',
-    footer: `<div class="footer-closing-ar">شكراً لزيارتكم · بالصحة والعافية</div><div class="footer-sub">نتطلع إلى استقبالكم مجدداً</div>`,
-    nav: ['✦ بريستيج','🍕 بيتزا','🫓 سوفليه','🌮 تاكوس','🍦 حلويات','☕ مشروبات','🎁 عروض'],
-    sections: [
-      { id:'prestige', icon:'✦', title:'مطعم بريستيج', titleAr:true, sub:'مطبخ راقٍ · أطباق فاخرة',
-        cats:[
-          { label:'مقبلات باردة', items:[
-            {n:'سلطة الدجاج',p:'850 DA'},{n:'سلطة الفريشور',p:'900 DA'},
-            {n:'سلطة التونة',p:'1000 DA'},{n:'سلطة سيزار',p:'1200 DA'},
-            {n:'سلطة الروبيان',p:'1500 DA'},{n:'كوكتيل الروبيان',p:'1500 DA'}]},
-          { label:'مقبلات ساخنة', items:[
-            {n:'عجة على الاختيار',p:'800 DA'},{n:'حساء اليوم',p:'900 DA'},
-            {n:'غراتان على الاختيار',p:'1500 DA'},{n:'روبيان بصلصة الطماطم / مقلي',p:'1800 DA'}]},
-          { label:'المعكرونة', items:[
-            {n:'سباغيتي ألفريدو',p:'1200 DA'},{n:'سباغيتي بولونيز',p:'1500 DA'},
-            {n:'سباغيتي بصلصة الروبيان',p:'1800 DA'}]},
-          { label:'الأطباق الرئيسية', items:[
-            {n:'إيسكالوب دجاج',p:'1650 DA'},{n:'أونتريكوت',p:'2300 DA'},
-            {n:'سمك (حسب الوصول)',p:'2300 DA'},{n:'فيليه على الاختيار',p:'2500 DA'},
-            {n:'شرائح فيلو ستروغانوف',p:'2500 DA'},{n:'ضلع خروف مشوي',p:'2500 DA'},
-            {n:'كبد مشوي',p:'3200 DA'},{n:'سكامبي روبيان',p:'3200 DA'}]},
-          { label:'الحلويات', items:[
-            {n:'تيراميسو',p:'400 DA'},{n:'كيك اليوم',p:'450 DA'},
-            {n:'كريم كراميل',p:'450 DA'},{n:'موس الشوكولا',p:'450 DA'},
-            {n:'فوندان الشوكولا',p:'500 DA'},{n:'فواكه الموسم',p:'500 DA'}]}
-        ], type:'prestige'
-      },
-      { id:'pizzas', icon:'🍕', title:'بيتزاناتنا', titleAr:true, sub:'بيتزيريا بيل فو', brand:true,
-        cats:[
-          { label:'صلصة الطماطم', items:[
-            {n:'مارغريتا',d:'صلصة طماطم / جبن / زيتون',p:'450 DA'},
-            {n:'نباتية',d:'باذنجان / كوسة / فلفل / بصل / جبن / زيتون',p:'550 DA'},
-            {n:'فوريستيير',d:'صلصة طماطم / جبن / مشروم / زيتون',p:'550 DA'},
-            {n:'لحم مفروم بولونيز',d:'لحم / بصل / فلفل / جبن / زيتون',p:'650 DA'},
-            {n:'دجاج متبل',d:'جبن / صلصة طماطم / دجاج متبل',p:'650 DA'},
-            {n:'تونة',d:'صلصة طماطم / جبن / زيتون / تونة',p:'650 DA'},
-            {n:'بيشور',d:'صلصة طماطم / جبن / مأكولات بحرية / زيتون',p:'800 DA'},
-            {n:'رويال',d:'صلصة طماطم / روبيان / جبن / زيتون / حبار',p:'850 DA'},
-            {n:'4 مواسم',d:'لحم / مشروم / تونة / دجاج / زيتون / جبن',p:'850 DA'},
-            {n:'4 أجبان',d:'كممبير / موزاريلا / شيدر / غرويير',p:'900 DA'},
-            {n:'بيتزا بيل فو ⭐',d:'جبن / زيتون / مأكولات بحرية / لحم / كبر / سلامي',p:'1000 DA'}]},
-          { label:'صلصة بيضاء', items:[
-            {n:'نباتية',d:'صلصة بيضاء / مشروم / جبن / باذنجان / كوسة / فلفل / زيتون',p:'650 DA'},
-            {n:'دجاج',d:'صلصة بيضاء / جبن / دجاج / زيتون',p:'650 DA'},
-            {n:'4 أجبان',d:'صلصة بيضاء / 4 أجبان / صلصة الجبن',p:'900 DA'}]}
-        ], type:'standard'
-      },
-      { id:'souffles', icon:'🫓', title:'السوفليه', titleAr:true, sub:'',
-        cats:[{ label:'', items:[
-          {n:'دجاج',d:'صلصة طماطم / دجاج / جبن',p:'500 DA'},
-          {n:'لحم مفروم',d:'جبن / لحم مفروم / مشروم',p:'600 DA'},
-          {n:'تونة',d:'صلصة طماطم / تونة / جبن',p:'600 DA'},
-          {n:'أجبان',d:'4 أجبان / صلصة بيضاء',p:'750 DA'},
-          {n:'مأكولات بحرية',d:'صلصة طماطم / جبن / مأكولات بحرية',p:'850 DA'}]}], type:'standard'
-      },
-      { id:'tacos', icon:'🌮', title:'التاكوس', titleAr:true, sub:'',
-        cats:[{ label:'', items:[
-          {n:'دجاج',p:'550 DA'},{n:'دجاج بجبن مضاعف',p:'700 DA'},
-          {n:'لحم مفروم',p:'650 DA'},{n:'لحم مفروم بجبن مضاعف',p:'700 DA'}]}], type:'standard'
-      },
-      { id:'desserts', icon:'🍦', title:'الحلويات والآيس كريم', titleAr:true, sub:'',
-        cats:[
-          { label:'كريب', items:[
-            {n:'كريب بالمربى',p:'350 DA'},{n:'كريب بالعسل',p:'350 DA'},
-            {n:'كريب نوتيلا',p:'400 DA'},{n:'كريب نوتيلا موز',p:'500 DA'}]},
-          { label:'آيس كريم', items:[
-            {n:'كرة آيس كريم واحدة',p:'200 DA'},{n:'كرتان آيس كريم',p:'350 DA'}]},
-          { label:'كوبات خاصة', type:'ice', items:[
-            {n:'كوب قوس قزح',d:'3 كرات بنكهات متنوعة',p:'500 DA'},
-            {n:'كوب أوريو',d:'3 كرات بنكهات متنوعة',p:'550 DA'},
-            {n:'كوب فريشور فروتي',d:'3 كرات بنكهات متنوعة',p:'550 DA'},
-            {n:'جلاسي ميرادور ⭐',d:'4 كرات + فواكه + كريمة شانتيلي',p:'700 DA'},
-            {n:'كوب أوسلو',d:'5 كرات متنوعة + فواكه + كريمة شانتيلي',p:'900 DA'}]}
-        ], type:'mixed'
-      },
-      { id:'boissons', icon:'☕', title:'المشروبات', titleAr:true, sub:'',
-        cats:[
-          { label:'باردة', type:'grid', items:[
-            {n:'ماء غازي 0.5 ل',p:'100 DA'},{n:'ماء غازي 1.5 ل',p:'150 DA'},
-            {n:'ماء معدني 0.5 ل',p:'100 DA'},{n:'ماء معدني 1.5 ل',p:'150 DA'},
-            {n:'مشروب غازي 33CL',p:'200 DA'},{n:'مشروب غازي علبة',p:'200 DA'},
-            {n:'مشروب غازي 1 ل',p:'250 DA'},{n:'عصير 33CL',p:'200 DA'},
-            {n:'عصير 1 ل',p:'300 DA'},{n:'عصير طبيعي',p:'500 DA'}]},
-          { label:'ساخنة', type:'grid', items:[
-            {n:'قهوة بالحليب',p:'200 DA'},{n:'قهوة سوداء',p:'200 DA'},
-            {n:'إسبريسو كابسول',p:'200 DA'},{n:'كابوتشينو',p:'200 DA'},
-            {n:'شاي',p:'200 DA'},{n:'تيزان',p:'200 DA'},
-            {n:'شوكولا ساخنة',p:'200 DA'},{n:'',p:''}]}
-        ], type:'drinks'
-      },
-      { id:'packs', icon:'🎁', title:'العروض الخاصة', titleAr:true, sub:'',
-        packs:[
-          {title:'🎯 باك تريو',details:'3 بيتزا دجاج متبل\n+ زجاجة كوكا كولا 1ل هدية',price:'1950 DA'},
-          {title:'🎯 باك كواترو',details:'4 بيتزا مارغريتا\n+ زجاجة كوكا كولا 1ل هدية',price:'1800 DA'},
-          {title:'👶 باك الأطفال',details:'بيتزا صغيرة + مشروب + حلوى',price:'800 DA',special:true}
-        ], type:'packs'
-      }
-    ]
-  },
-
-  en: {
-    dir: 'ltr',
-    welcome: `<div class="welcome-line">Welcome to your gastronomic experience</div><div class="location-line">Filfila · Skikda · Algeria</div>`,
-    beach_title: 'ORDER FROM THE BEACH',
-    beach_sub: 'Our staff delivers directly to your spot · Pizzeria & Prestige Restaurant available',
-    footer: `<div class="footer-closing">Thank you for your visit · Enjoy your meal</div><div class="footer-sub">We look forward to welcoming you again</div>`,
-    nav: ['✦ Prestige','🍕 Pizzas','🫓 Soufflés','🌮 Tacos','🍦 Desserts','☕ Drinks','🎁 Deals'],
-    sections: [
-      { id:'prestige', icon:'✦', title:'Prestige Restaurant', sub:'Fine Dining · Gourmet Cuisine',
-        cats:[
-          { label:'Cold Starters', items:[
-            {n:'Chicken Salad',p:'850 DA'},{n:'Freshness Salad',p:'900 DA'},
-            {n:'Tuna Salad',p:'1000 DA'},{n:'Caesar Salad',p:'1200 DA'},
-            {n:'Shrimp Salad',p:'1500 DA'},{n:'Shrimp Cocktail',p:'1500 DA'}]},
-          { label:'Hot Starters', items:[
-            {n:'Omelette of your choice',p:'800 DA'},{n:"Chef's Soup",p:'900 DA'},
-            {n:'Gratin of your choice',p:'1500 DA'},{n:'Shrimp in tomato sauce / sautéed',p:'1800 DA'}]},
-          { label:'Pasta', items:[
-            {n:'Spaghetti Alfredo',p:'1200 DA'},{n:'Spaghetti Bolognese',p:'1500 DA'},
-            {n:'Spaghetti with Shrimp Sauce',p:'1800 DA'}]},
-          { label:'Main Courses', items:[
-            {n:'Chicken Escalope',p:'1650 DA'},{n:'Entrecôte',p:'2300 DA'},
-            {n:'Fish (upon arrival)',p:'2300 DA'},{n:'Fillet of your choice',p:'2500 DA'},
-            {n:'Veal Stroganoff',p:'2500 DA'},{n:'Grilled Lamb Chop',p:'2500 DA'},
-            {n:'Grilled Liver',p:'3200 DA'},{n:'Shrimp Scampi',p:'3200 DA'}]},
-          { label:'Desserts', items:[
-            {n:'Tiramisu',p:'400 DA'},{n:"Today's Cake",p:'450 DA'},
-            {n:'Crème Caramel',p:'450 DA'},{n:'Chocolate Mousse',p:'450 DA'},
-            {n:'Chocolate Fondant',p:'500 DA'},{n:'Seasonal Fruits',p:'500 DA'}]}
-        ], type:'prestige'
-      },
-      { id:'pizzas', icon:'🍕', title:'Our Pizzas', sub:'Pizzeria Belle Vue', brand:true,
-        cats:[
-          { label:'Tomato Sauce', items:[
-            {n:'Margherita',d:'Tomato sauce / cheese / olive',p:'450 DA'},
-            {n:'Vegetarian',d:'Eggplant / zucchini / pepper / onions / cheese / olive',p:'550 DA'},
-            {n:'Forestière',d:'Tomato sauce / cheese / mushrooms / olive',p:'550 DA'},
-            {n:'Minced Meat Bolognese',d:'Minced meat / onion / pepper / cheese / olive',p:'650 DA'},
-            {n:'Marinated Chicken',d:'Cheese / tomato sauce / marinated chicken',p:'650 DA'},
-            {n:'Tuna',d:'Tomato sauce / cheese / olive / tuna',p:'650 DA'},
-            {n:'Fisherman',d:'Tomato sauce / cheese / seafood / olive',p:'800 DA'},
-            {n:'Royale',d:'Tomato sauce / shrimp / cheese / olive / squid',p:'850 DA'},
-            {n:'4 Seasons',d:'Minced meat / mushrooms / tuna / chicken / olive / cheese',p:'850 DA'},
-            {n:'4 Cheeses',d:'Camembert / Mozzarella / Cheddar / Gruyère',p:'900 DA'},
-            {n:'Belle Vue Pizza ⭐',d:'Cheese / olive / seafood / minced meat / capers / salami',p:'1000 DA'}]},
-          { label:'White Sauce', items:[
-            {n:'Vegetarian',d:'White sauce / mushrooms / cheese / eggplant / zucchini / pepper / olive',p:'650 DA'},
-            {n:'Chicken',d:'White sauce / cheese / chicken / olive',p:'650 DA'},
-            {n:'4 Cheeses',d:'White sauce / 4 cheeses / cheese sauce',p:'900 DA'}]}
-        ], type:'standard'
-      },
-      { id:'souffles', icon:'🫓', title:'Our Soufflés', sub:'',
-        cats:[{ label:'', items:[
-          {n:'Chicken',d:'Tomato sauce / chicken / cheese',p:'500 DA'},
-          {n:'Minced Meat',d:'Cheese / minced meat / mushrooms',p:'600 DA'},
-          {n:'Tuna',d:'Tomato sauce / tuna / cheese',p:'600 DA'},
-          {n:'Cheese',d:'4 cheeses / white sauce',p:'750 DA'},
-          {n:'Seafood',d:'Tomato sauce / cheese / seafood',p:'850 DA'}]}], type:'standard'
-      },
-      { id:'tacos', icon:'🌮', title:'Our Tacos', sub:'',
-        cats:[{ label:'', items:[
-          {n:'Chicken',p:'550 DA'},{n:'Chicken Double Cheese',p:'700 DA'},
-          {n:'Minced Meat',p:'650 DA'},{n:'Minced Meat Double Cheese',p:'700 DA'}]}], type:'standard'
-      },
-      { id:'desserts', icon:'🍦', title:'Desserts & Ice Cream', sub:'',
-        cats:[
-          { label:'Crêpes', items:[
-            {n:'Jam Crêpe',p:'350 DA'},{n:'Honey Crêpe',p:'350 DA'},
-            {n:'Nutella Crêpe',p:'400 DA'},{n:'Nutella Banana Crêpe',p:'500 DA'}]},
-          { label:'Ice Cream', items:[
-            {n:'1 Scoop',p:'200 DA'},{n:'2 Scoops',p:'350 DA'}]},
-          { label:'Special Cups', type:'ice', items:[
-            {n:'Rainbow Cup',d:'3 assorted flavoured scoops',p:'500 DA'},
-            {n:'Oreo Cup',d:'3 assorted flavoured scoops',p:'550 DA'},
-            {n:'Fruity Freshness Cup',d:'3 assorted flavoured scoops',p:'550 DA'},
-            {n:'Mirador Ice Cream ⭐',d:'4 scoops of your choice & fruits, whipped cream',p:'700 DA'},
-            {n:'Cup « Oslo »',d:'5 assorted scoops, fruits, whipped cream',p:'900 DA'}]}
-        ], type:'mixed'
-      },
-      { id:'boissons', icon:'☕', title:'Drinks', sub:'',
-        cats:[
-          { label:'Cold', type:'grid', items:[
-            {n:'Still Water 0.5L',p:'100 DA'},{n:'Sparkling Water 1.5L',p:'150 DA'},
-            {n:'Still Water 0.5L',p:'100 DA'},{n:'Still Water 1.5L',p:'150 DA'},
-            {n:'Soft Drink 33CL',p:'200 DA'},{n:'Soft Drink Can',p:'200 DA'},
-            {n:'Soft Drink 1L',p:'250 DA'},{n:'Juice 33CL',p:'200 DA'},
-            {n:'Juice 1L',p:'300 DA'},{n:'Fresh Juice',p:'500 DA'}]},
-          { label:'Hot', type:'grid', items:[
-            {n:'Café au Lait',p:'200 DA'},{n:'Black Coffee',p:'200 DA'},
-            {n:'Espresso Capsule',p:'200 DA'},{n:'Cappuccino',p:'200 DA'},
-            {n:'Tea',p:'200 DA'},{n:'Herbal Tea',p:'200 DA'},
-            {n:'Hot Chocolate',p:'200 DA'},{n:'',p:''}]}
-        ], type:'drinks'
-      },
-      { id:'packs', icon:'🎁', title:'Special Deals', sub:'',
-        packs:[
-          {title:'🎯 Trio Pack',details:'3 Marinated Chicken Pizzas\n+ 1 Coca Cola 1L FREE',price:'1950 DA'},
-          {title:'🎯 Quatro Pack',details:'4 Margherita Pizzas\n+ 1 Coca Cola 1L FREE',price:'1800 DA'},
-          {title:'👶 Kids Pack',details:'1 Mini Pizza + 1 Drink + 1 Dessert',price:'800 DA',special:true}
-        ], type:'packs'
-      }
-    ]
-  }
-};
-
-// ══════════════════════════════════════════
-// RENDER ENGINE
-// ══════════════════════════════════════════
-let currentLang = 'fr';
-let currentSection = 0;
-
-function renderAll(lang) {
-  const d = T[lang];
-  document.documentElement.setAttribute('dir', d.dir);
-  document.body.style.direction = d.dir;
-
-  // Hero
-  document.getElementById('hero-welcome').innerHTML = d.welcome;
-  document.getElementById('beach-title').textContent = d.beach_title;
-  document.getElementById('beach-sub').textContent = d.beach_sub;
-  document.getElementById('footer-closing').innerHTML = d.footer;
-
-  // Nav
-  const nav = document.getElementById('main-nav');
-  nav.innerHTML = d.nav.map((label,i) =>
-    `<button class="nav-btn${i===currentSection?' active':''}" onclick="showSection(${i})">${label}</button>`
-  ).join('');
-
-  // Sections
-  const container = document.getElementById('sections-container');
-  container.innerHTML = d.sections.map((sec, si) => {
-    let inner = '';
-
-    // Title
-    const titleHtml = sec.titleAr
-      ? `<div class="sec-title-ar">${sec.title}</div>`
-      : `<div class="sec-title">${sec.title}</div>`;
-
-    inner += `<div class="sec-header"><div class="sec-icon">${sec.icon}</div>${titleHtml}`;
-    if(sec.sub) inner += `<div class="sec-sub">${sec.sub}</div>`;
-    inner += `<div class="sec-line"><div class="sl"></div><div class="sd"></div><div class="sl r"></div></div></div>`;
-
-    if(sec.brand) {
-      inner += `<div class="brand-badge" style="display:inline-flex;">
-        <img src="/mnt/user-data/uploads/642b3120-53e9-43d6-a92e-b2af2b7a29d8-removebg-preview.png" style="width:22px;height:22px;object-fit:contain;" onerror="this.style.display='none'">
-        <span>PIZZERIA BELLE VUE</span></div>`;
-    }
-
-    if(sec.type === 'packs') {
-      sec.packs.forEach(p => {
-        const sp = p.special ? 'background:linear-gradient(135deg,rgba(100,80,10,0.22),rgba(10,10,20,0.5));border-color:rgba(201,168,76,0.28);' : '';
-        const pc = p.special ? 'color:var(--gold2);' : '';
-        inner += `<div class="pack-card" style="${sp}">
-          <div class="ptitle" style="${pc}">${p.title}</div>
-          <div class="pdetails">${p.details.replace('\n','<br>')}</div>
-          <div class="pbig" style="${pc}">${p.price} <span>/ pack</span></div>
-        </div>`;
-      });
-    } else {
-      sec.cats.forEach(cat => {
-        if(cat.label) {
-          inner += `<div class="cat-row"><div class="cat-rule"></div><div class="cat-label">${cat.label}</div><div class="cat-rule"></div></div>`;
-        }
-        if(cat.type === 'grid') {
-          inner += `<div class="bois-grid">`;
-          cat.items.forEach(it => {
-            inner += `<div class="bitem"><div class="bname">${it.n}</div><div class="bprice">${it.p}</div></div>`;
-          });
-          inner += `</div>`;
-        } else if(cat.type === 'ice') {
-          cat.items.forEach(it => {
-            inner += `<div class="ice"><div class="iname">${it.n}</div>`;
-            if(it.d) inner += `<div class="idesc">${it.d}</div>`;
-            inner += `<div class="iprice">${it.p}</div></div>`;
-          });
-        } else if(sec.type === 'prestige') {
-          cat.items.forEach(it => {
-            inner += `<div class="pitem"><div class="pname">${it.n}</div><div class="pprice">${it.p}</div></div>`;
-          });
-        } else {
-          cat.items.forEach(it => {
-            inner += `<div class="mitem"><div><div class="mname">${it.n}</div>`;
-            if(it.d) inner += `<div class="mdesc">${it.d}</div>`;
-            inner += `</div><div class="mprice">${it.p}</div></div>`;
-          });
-        }
-      });
-    }
-
-    return `<div class="section${si===currentSection?' active':''}" id="sec_${lang}_${si}">${inner}</div>`;
-  }).join('');
-
-  // RTL class
-  if(lang==='ar'){
-    document.querySelectorAll('.cat-row').forEach(el=>el.classList.add('rtl'));
-  }
-}
-
-function showSection(idx) {
-  currentSection = idx;
+const map={prestige:0,pizzas:1,souffles:2,tacos:3,desserts:4,boissons:5,packs:6};
+function show(id){
   document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
-  const secs = document.querySelectorAll('.section');
-  if(secs[idx]) secs[idx].classList.add('active');
-  const btns = document.querySelectorAll('#main-nav .nav-btn');
-  if(btns[idx]) btns[idx].classList.add('active');
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.nav-btn')[map[id]].classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
-
-function setLang(lang) {
-  currentLang = lang;
-  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
-  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
-  renderAll(lang);
-}
-
-// Init
-renderAll('fr');
 </script>
 </body>
 </html>
