@@ -1,4 +1,4 @@
-<!--<!DOCTYPE html> -->
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -6,11 +6,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --gold:#c9a84c;--gold2:#e8c97a;--gold3:#f5dfa0;
-  --dark:#06100a;--dark2:#0c1a10;
-  --green:#1e3d28;--green2:#2d5a3d;
-}
+:root{--gold:#c9a84c;--gold2:#e8c97a;--dark:#06100a;--dark2:#0c1a10;}
 body{font-family:'Montserrat',sans-serif;background:var(--dark);color:#fff;overflow-x:hidden;min-height:100vh;}
 
 /* ── LANG BAR ── */
@@ -20,85 +16,105 @@ body{font-family:'Montserrat',sans-serif;background:var(--dark);color:#fff;overf
 .lang-btn:hover:not(.active){color:var(--gold2);border-color:var(--gold);}
 
 /* ── HERO ── */
-.hero{position:relative;min-height:480px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:60px 20px 70px;margin-top:30px;}
-.hero-bg{position:absolute;inset:0;background:url('/mnt/user-data/uploads/hotel-belle-vue-skikda-bar-de-plage.webp') center/cover no-repeat;filter:brightness(0.28) saturate(1.3);}
-.hero-overlay{position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 30%,rgba(201,168,76,0.07) 0%,transparent 70%),linear-gradient(to bottom,rgba(6,16,10,0.1) 0%,rgba(6,16,10,0.93) 100%);}
+.hero{position:relative;min-height:520px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:55px 20px 75px;margin-top:30px;}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('/mnt/user-data/uploads/hotel-belle-vue-skikda-bar-de-plage.webp') center/cover no-repeat;
+  filter:brightness(0.25) saturate(1.2);
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 85% 55% at 50% 25%, rgba(201,168,76,0.07) 0%, transparent 65%),
+    linear-gradient(to bottom, rgba(6,16,10,0.05) 0%, rgba(6,16,10,0.95) 100%);
+}
 .gold-bar{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold2),var(--gold),transparent);}
-.hero-content{position:relative;z-index:2;width:100%;}
-.logos-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:20px;flex-wrap:wrap;}
-.logo-main{width:170px;filter:drop-shadow(0 4px 20px rgba(201,168,76,0.3));}
-.logo-side{width:62px;height:62px;object-fit:contain;filter:drop-shadow(0 2px 10px rgba(0,0,0,0.5));border-radius:50%;background:rgba(255,255,255,0.07);padding:4px;}
-.logo-divider{width:1px;height:50px;background:rgba(201,168,76,0.2);}
-.welcome-ar{font-family:'Amiri',serif;font-size:18px;color:var(--gold2);direction:rtl;margin-bottom:4px;}
-.welcome-fr{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(255,255,255,0.6);margin-bottom:4px;}
-.welcome-en{font-size:10px;letter-spacing:3px;color:rgba(255,255,255,0.3);margin-bottom:16px;text-transform:uppercase;}
-.stars{color:var(--gold);letter-spacing:4px;font-size:12px;margin-bottom:18px;}
-.beach-banner{background:linear-gradient(135deg,rgba(201,168,76,0.1),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,0.25);border-radius:14px;padding:12px 16px;max-width:340px;margin:0 auto;display:flex;align-items:center;gap:10px;}
-.beach-txt strong{font-size:10px;color:var(--gold);letter-spacing:1.5px;display:block;margin-bottom:3px;}
-.beach-txt small{font-size:9px;color:rgba(255,255,255,0.4);line-height:1.5;display:block;}
-.beach-logos{display:flex;gap:6px;align-items:center;flex-shrink:0;}
-.beach-logo-sm{width:28px;height:28px;object-fit:contain;filter:brightness(1.3);}
-.wave-div{position:absolute;bottom:0;left:0;right:0;height:45px;overflow:hidden;}
+.hero-content{position:relative;z-index:2;width:100%;display:flex;flex-direction:column;align-items:center;}
+
+/* ── BIG LOGO CENTER ── */
+.logo-main-wrap{
+  margin-bottom:10px;
+  filter:drop-shadow(0 6px 32px rgba(201,168,76,0.25)) drop-shadow(0 2px 8px rgba(0,0,0,0.8));
+}
+.logo-main-wrap img{
+  width:280px;
+  max-width:85vw;
+  height:auto;
+  display:block;
+}
+
+/* ── SIDE LOGOS ROW ── */
+.side-logos{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:18px;}
+.logo-side{width:54px;height:54px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.6));background:rgba(255,255,255,0.07);border-radius:50%;padding:5px;border:1px solid rgba(201,168,76,0.18);}
+.side-divider{width:60px;height:1px;background:rgba(201,168,76,0.25);}
+
+.stars{color:var(--gold);letter-spacing:5px;font-size:12px;margin-bottom:14px;text-shadow:0 0 12px rgba(201,168,76,0.4);}
+.welcome-line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(255,255,255,0.55);margin-bottom:3px;}
+.welcome-ar-line{font-family:'Amiri',serif;font-size:18px;color:var(--gold2);direction:rtl;margin-bottom:3px;}
+.location-line{font-size:9px;letter-spacing:3px;color:rgba(255,255,255,0.28);margin-bottom:18px;text-transform:uppercase;}
+
+.beach-banner{background:linear-gradient(135deg,rgba(201,168,76,0.09),rgba(6,16,10,0.45));border:1px solid rgba(201,168,76,0.22);border-radius:14px;padding:12px 16px;max-width:340px;display:flex;align-items:center;gap:10px;}
+.beach-txt strong{font-size:9px;color:var(--gold);letter-spacing:1.5px;display:block;margin-bottom:3px;font-weight:700;}
+.beach-txt small{font-size:9px;color:rgba(255,255,255,0.38);line-height:1.5;display:block;}
+.beach-logos{display:flex;gap:5px;align-items:center;flex-shrink:0;}
+.beach-logo-sm{width:26px;height:26px;object-fit:contain;}
+
+.wave-div{position:absolute;bottom:0;left:0;right:0;height:48px;overflow:hidden;}
 .wave-div svg{display:block;width:100%;height:100%;}
 
-/* ── TOP NAV (Restaurant / Pizzeria) ── */
-.top-nav{position:sticky;top:30px;z-index:101;background:rgba(6,16,10,0.98);backdrop-filter:blur(10px);border-bottom:2px solid rgba(201,168,76,0.3);display:flex;}
-.top-btn{flex:1;padding:16px 10px;background:none;border:none;color:rgba(255,255,255,0.4);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;cursor:pointer;transition:all 0.25s;text-transform:uppercase;border-bottom:3px solid transparent;position:relative;top:2px;display:flex;align-items:center;justify-content:center;gap:8px;}
-.top-btn.active{color:var(--gold2);border-bottom-color:var(--gold);background:rgba(201,168,76,0.05);}
-.top-btn:hover:not(.active){color:rgba(201,168,76,0.6);}
-.top-btn-icon{font-size:18px;}
+/* ── TOP NAV ── */
+.top-nav{position:sticky;top:30px;z-index:101;background:rgba(6,16,10,0.98);backdrop-filter:blur(10px);border-bottom:2px solid rgba(201,168,76,0.28);display:flex;}
+.top-btn{flex:1;padding:15px 10px;background:none;border:none;color:rgba(255,255,255,0.38);font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;cursor:pointer;transition:all 0.25s;text-transform:uppercase;border-bottom:3px solid transparent;position:relative;top:2px;display:flex;align-items:center;justify-content:center;gap:7px;}
+.top-btn.active{color:var(--gold2);border-bottom-color:var(--gold);background:rgba(201,168,76,0.04);}
+.top-btn-icon{font-size:17px;}
 
 /* ── SUB NAV ── */
-.sub-nav{position:sticky;top:82px;z-index:100;background:rgba(6,16,10,0.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,0.12);display:flex;overflow-x:auto;scrollbar-width:none;}
+.sub-nav{position:sticky;top:80px;z-index:100;background:rgba(6,16,10,0.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,0.1);display:flex;overflow-x:auto;scrollbar-width:none;}
 .sub-nav::-webkit-scrollbar{display:none}
-.sub-btn{flex-shrink:0;padding:11px 14px;background:none;border:none;border-bottom:2px solid transparent;color:rgba(255,255,255,0.32);font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:1.5px;cursor:pointer;transition:all 0.2s;white-space:nowrap;position:relative;top:1px;text-transform:uppercase;}
+.sub-btn{flex-shrink:0;padding:11px 13px;background:none;border:none;border-bottom:2px solid transparent;color:rgba(255,255,255,0.3);font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:1.3px;cursor:pointer;transition:all 0.2s;white-space:nowrap;position:relative;top:1px;text-transform:uppercase;}
 .sub-btn.active{color:var(--gold2);border-bottom-color:var(--gold);}
 
-/* ── PANELS ── */
+/* ── PANELS & SECTIONS ── */
 .panel{display:none;}.panel.active{display:block;}
-
-/* ── SECTION ── */
 .section{display:none;padding:28px 18px 44px;}.section.active{display:block;}
 
 /* ── SEC HEADER ── */
 .sec-header{text-align:center;margin-bottom:28px;}
-.sec-icon{font-size:30px;margin-bottom:8px;}
+.sec-icon{font-size:28px;margin-bottom:7px;}
 .sec-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--gold2);margin-bottom:4px;}
 .sec-title-ar{font-family:'Amiri',serif;font-size:32px;color:var(--gold2);margin-bottom:4px;}
-.sec-sub{font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.28);margin-bottom:12px;text-transform:uppercase;}
+.sec-sub{font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.26);margin-bottom:12px;text-transform:uppercase;}
 .sec-line{display:flex;align-items:center;gap:8px;max-width:180px;margin:0 auto;}
 .sl{flex:1;height:1px;background:linear-gradient(to right,transparent,var(--gold));}
 .sl.r{background:linear-gradient(to left,transparent,var(--gold));}
-.sd{width:6px;height:6px;border-radius:50%;background:var(--gold);}
+.sd{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 6px rgba(201,168,76,0.5);}
 
 /* ── CATEGORY ── */
-.cat-row{display:flex;align-items:center;gap:10px;margin:24px 0 14px;}
-.cat-label{font-size:10px;letter-spacing:2.5px;font-weight:700;color:var(--gold);text-transform:uppercase;white-space:nowrap;}
-.cat-rule{flex:1;height:1px;background:rgba(201,168,76,0.12);}
+.cat-row{display:flex;align-items:center;gap:10px;margin:22px 0 13px;}
+.cat-label{font-size:10px;letter-spacing:2px;font-weight:700;color:var(--gold);text-transform:uppercase;white-space:nowrap;}
+.cat-rule{flex:1;height:1px;background:rgba(201,168,76,0.1);}
 
-/* ── MENU ITEMS — bigger font ── */
+/* ── ITEMS ── */
 .mitem{display:flex;align-items:flex-start;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);gap:14px;}
 .mitem:last-child{border-bottom:none;}
-.mname{font-size:15px;font-weight:700;color:#fff;letter-spacing:0.3px;line-height:1.3;}
+.mname{font-size:15px;font-weight:700;color:#fff;line-height:1.3;}
 .mdesc{font-size:11px;color:rgba(255,255,255,0.32);margin-top:4px;font-style:italic;line-height:1.5;}
 .mprice{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--gold2);white-space:nowrap;flex-shrink:0;}
-
-/* ── PRESTIGE ITEMS — bigger font ── */
 .pitem{display:flex;align-items:flex-start;justify-content:space-between;padding:15px 0;border-bottom:1px solid rgba(255,255,255,0.06);gap:14px;}
 .pitem:last-child{border-bottom:none;}
 .pname{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:rgba(255,255,255,0.9);}
 .pprice{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:700;color:var(--gold2);white-space:nowrap;flex-shrink:0;}
 
-/* ── PACK CARD ── */
-.pack-card{border:1px solid rgba(201,168,76,0.22);border-radius:14px;padding:20px;margin:12px 0;background:linear-gradient(135deg,rgba(45,90,61,0.2),rgba(6,16,10,0.55));position:relative;overflow:hidden;}
+/* ── PACK ── */
+.pack-card{border:1px solid rgba(201,168,76,0.2);border-radius:14px;padding:20px;margin:12px 0;background:linear-gradient(135deg,rgba(45,90,61,0.18),rgba(6,16,10,0.6));position:relative;overflow:hidden;}
 .pack-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
 .ptitle{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--gold2);margin-bottom:8px;}
-.pdetails{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.8;}
+.pdetails{font-size:13px;color:rgba(255,255,255,0.42);line-height:1.8;}
 .pbig{font-family:'Cormorant Garamond',serif;font-size:26px;color:#fff;font-weight:700;margin-top:12px;}
 .pbig span{font-size:11px;color:var(--gold);font-family:'Montserrat',sans-serif;}
 
-/* ── ICE CARD ── */
-.ice{border:1px solid rgba(120,190,255,0.12);border-radius:12px;padding:15px;margin:10px 0;background:linear-gradient(135deg,rgba(20,50,90,0.22),rgba(6,16,10,0.55));}
+/* ── ICE ── */
+.ice{border:1px solid rgba(120,190,255,0.11);border-radius:12px;padding:15px;margin:10px 0;background:linear-gradient(135deg,rgba(20,50,90,0.2),rgba(6,16,10,0.6));}
 .iname{font-family:'Cormorant Garamond',serif;font-size:17px;color:#a8d8ff;margin-bottom:4px;}
 .idesc{font-size:11px;color:rgba(255,255,255,0.3);font-style:italic;}
 .iprice{font-family:'Cormorant Garamond',serif;font-size:18px;color:#a8d8ff;font-weight:700;margin-top:8px;}
@@ -108,20 +124,20 @@ body{font-family:'Montserrat',sans-serif;background:var(--dark);color:#fff;overf
 .bitem{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
 .bitem:nth-child(odd){padding-right:12px;border-right:1px solid rgba(255,255,255,0.05);}
 .bitem:nth-child(even){padding-left:12px;}
-.bname{font-size:12px;color:rgba(255,255,255,0.65);}
+.bname{font-size:12px;color:rgba(255,255,255,0.62);}
 .bprice{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold);margin-top:2px;}
 
 /* ── BRAND BADGE ── */
-.brand-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.18);border-radius:30px;padding:7px 16px;margin:0 auto 22px;}
+.brand-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.16);border-radius:30px;padding:7px 16px;margin:0 auto 22px;}
 .brand-badge img{width:24px;height:24px;object-fit:contain;}
 .brand-badge span{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:600;}
 
 /* ── FOOTER ── */
-.footer{text-align:center;padding:30px 18px 50px;border-top:1px solid rgba(201,168,76,0.12);}
-.footer-photo{width:100%;max-height:150px;object-fit:cover;object-position:center 35%;border-radius:14px;margin-bottom:20px;filter:brightness(0.55) saturate(1.1);}
-.footer-logos{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:16px;}
-.footer-logo-main{width:130px;opacity:0.75;}
-.footer-logo-side{width:46px;height:46px;object-fit:contain;opacity:0.5;}
+.footer{text-align:center;padding:30px 18px 50px;border-top:1px solid rgba(201,168,76,0.1);}
+.footer-photo{width:100%;max-height:150px;object-fit:cover;object-position:center 35%;border-radius:14px;margin-bottom:20px;filter:brightness(0.5) saturate(1.1);}
+.footer-logo-main{width:140px;opacity:0.75;margin:0 auto 16px;display:block;}
+.footer-side-row{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:16px;}
+.footer-logo-side{width:42px;height:42px;object-fit:contain;opacity:0.45;}
 .footer-closing{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--gold2);margin-bottom:5px;}
 .footer-closing-ar{font-family:'Amiri',serif;font-size:19px;color:var(--gold2);direction:rtl;margin-bottom:5px;}
 .footer-sub{font-size:10px;color:rgba(255,255,255,0.22);letter-spacing:1px;margin-bottom:12px;}
@@ -132,7 +148,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--dark);color:#fff;overf
 </head>
 <body>
 
-<!-- LANG BAR -->
+<!-- LANG -->
 <div class="lang-bar">
   <button class="lang-btn" onclick="setLang('ar')">عربية</button>
   <button class="lang-btn active" onclick="setLang('fr')">FR</button>
@@ -145,17 +161,27 @@ body{font-family:'Montserrat',sans-serif;background:var(--dark);color:#fff;overf
   <div class="hero-overlay"></div>
   <div class="gold-bar"></div>
   <div class="hero-content">
-    <div class="logos-row">
+
+    <!-- BIG MAIN LOGO -->
+    <div class="logo-main-wrap">
+      <img src="/mnt/user-data/uploads/8de73525-bb2b-40eb-b806-d1c5fd488664-removebg-preview.png"
+           alt="Hotel Belle Vue"
+           onerror="this.outerHTML='<div style=\'font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:#cc1111;text-shadow:0 2px 20px rgba(0,0,0,0.8);\'>فندق المنظر الجميل<br><span style=\'color:#e8c97a;\'>Hotel Belle Vue</span></div>'">
+    </div>
+
+    <!-- SIDE LOGOS -->
+    <div class="side-logos">
       <img class="logo-side" src="/mnt/user-data/uploads/272b1fd3-4712-488c-88f7-c2ef535efbcb-removebg-preview.png" alt="Plage" onerror="this.style.display='none'">
-      <div class="logo-divider"></div>
-      <img class="logo-main" src="/mnt/user-data/uploads/8de73525-bb2b-40eb-b806-d1c5fd488664-removebg-preview.png" alt="Hotel Belle Vue" onerror="this.style.display='none'">
-      <div class="logo-divider"></div>
+      <div class="side-divider"></div>
+      <div class="stars">★ ★ ★ ★</div>
+      <div class="side-divider"></div>
       <img class="logo-side" src="/mnt/user-data/uploads/642b3120-53e9-43d6-a92e-b2af2b7a29d8-removebg-preview.png" alt="Pizzeria" onerror="this.style.display='none'">
     </div>
-    <div class="stars">★ ★ ★ ★</div>
+
     <div id="hero-welcome"></div>
+
     <div class="beach-banner">
-      <div style="font-size:28px;">🏖️</div>
+      <div style="font-size:26px;">🏖️</div>
       <div class="beach-txt">
         <strong id="beach-title"></strong>
         <small id="beach-sub"></small>
@@ -166,18 +192,16 @@ body{font-family:'Montserrat',sans-serif;background:var(--dark);color:#fff;overf
       </div>
     </div>
   </div>
-  <div class="wave-div"><svg viewBox="0 0 400 45" preserveAspectRatio="none" fill="#06100a"><path d="M0,28 Q80,5 160,22 Q240,40 320,18 Q370,5 400,22 L400,45 L0,45Z"/></svg></div>
+  <div class="wave-div"><svg viewBox="0 0 400 48" preserveAspectRatio="none" fill="#06100a"><path d="M0,30 Q80,6 160,24 Q240,42 320,18 Q370,4 400,22 L400,48 L0,48Z"/></svg></div>
 </div>
 
 <!-- TOP NAV -->
 <div class="top-nav">
   <button class="top-btn active" id="btn-restaurant" onclick="switchPanel('restaurant')">
-    <span class="top-btn-icon">🍽️</span>
-    <span id="lbl-restaurant">Restaurant Prestige</span>
+    <span class="top-btn-icon">🍽️</span><span id="lbl-restaurant">Restaurant Prestige</span>
   </button>
   <button class="top-btn" id="btn-pizzeria" onclick="switchPanel('pizzeria')">
-    <span class="top-btn-icon">🍕</span>
-    <span id="lbl-pizzeria">Pizzeria Belle Vue</span>
+    <span class="top-btn-icon">🍕</span><span id="lbl-pizzeria">Pizzeria Belle Vue</span>
   </button>
 </div>
 
@@ -185,19 +209,15 @@ body{font-family:'Montserrat',sans-serif;background:var(--dark);color:#fff;overf
 <nav class="sub-nav" id="sub-nav"></nav>
 
 <!-- PANELS -->
-<div class="panel active" id="panel-restaurant">
-  <div id="secs-restaurant"></div>
-</div>
-<div class="panel" id="panel-pizzeria">
-  <div id="secs-pizzeria"></div>
-</div>
+<div class="panel active" id="panel-restaurant"><div id="secs-restaurant"></div></div>
+<div class="panel" id="panel-pizzeria"><div id="secs-pizzeria"></div></div>
 
 <!-- FOOTER -->
 <div class="footer">
   <img class="footer-photo" src="/mnt/user-data/uploads/hotel-belle-vue-skikda-bar-de-plage.webp" onerror="this.style.display='none'" alt="Plage Belle Vue">
-  <div class="footer-logos">
+  <img class="footer-logo-main" src="/mnt/user-data/uploads/8de73525-bb2b-40eb-b806-d1c5fd488664-removebg-preview.png" onerror="this.style.display='none'" alt="Logo">
+  <div class="footer-side-row">
     <img class="footer-logo-side" src="/mnt/user-data/uploads/272b1fd3-4712-488c-88f7-c2ef535efbcb-removebg-preview.png" onerror="this.style.display='none'">
-    <img class="footer-logo-main" src="/mnt/user-data/uploads/8de73525-bb2b-40eb-b806-d1c5fd488664-removebg-preview.png" onerror="this.style.display='none'">
     <img class="footer-logo-side" src="/mnt/user-data/uploads/642b3120-53e9-43d6-a92e-b2af2b7a29d8-removebg-preview.png" onerror="this.style.display='none'">
   </div>
   <div id="footer-closing"></div>
@@ -206,452 +226,205 @@ body{font-family:'Montserrat',sans-serif;background:var(--dark);color:#fff;overf
 </div>
 
 <script>
-// ═══════════════════════════════════════════
-// DATA
-// ═══════════════════════════════════════════
-const D = {
-  fr:{
-    dir:'ltr',
-    welcome:`<div class="welcome-fr">Bienvenue dans votre espace gastronomique</div><div class="welcome-en">Filfila · Skikda · Algérie</div>`,
-    beach_title:'COMMANDEZ DEPUIS LA PLAGE',
-    beach_sub:'Nos serveurs vous rejoignent · Pizzeria & Restaurant Prestige disponibles',
+const D={
+  fr:{dir:'ltr',
+    welcome:`<div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(255,255,255,0.55);margin-bottom:3px;">Bienvenue dans votre espace gastronomique</div><div style="font-size:9px;letter-spacing:3px;color:rgba(255,255,255,0.26);margin-bottom:18px;text-transform:uppercase;">Filfila · Skikda · Algérie</div>`,
+    beach_title:'COMMANDEZ DEPUIS LA PLAGE',beach_sub:'Nos serveurs vous rejoignent · Pizzeria & Restaurant Prestige disponibles',
     footer:`<div class="footer-closing">Merci de votre visite · Bon Appétit</div><div class="footer-sub">Nous espérons vous revoir très bientôt</div>`,
     panel_labels:['Restaurant Prestige','Pizzeria Belle Vue'],
-
     restaurant:[
-      { id:'entrees', icon:'🥗', title:'Les Entrées', sub:'', cats:[
-        { label:'Froides', items:[
-          {n:'Salade de Poulet',p:'850 DA'},{n:'Salade Fraîcheur',p:'900 DA'},
-          {n:'Salade de Thon',p:'1000 DA'},{n:'Salade César',p:'1200 DA'},
-          {n:'Salade de Crevette',p:'1500 DA'},{n:'Cocktail de Crevette',p:'1500 DA'}]},
-        { label:'Chaudes', items:[
-          {n:'Omelette au choix',p:'800 DA'},{n:'Soupe du Jour',p:'900 DA'},
-          {n:'Gratin aux choix',p:'1500 DA'},{n:'Crevettes sauce tomate / sautée',p:'1800 DA'}]}
-      ], type:'prestige'},
-      { id:'pates', icon:'🍝', title:'Les Pâtes', sub:'', cats:[
-        { label:'', items:[
-          {n:'Spaghetti Alfredo',p:'1200 DA'},{n:'Spaghetti Bolognaise',p:'1500 DA'},
-          {n:'Spaghetti sauce crevettes',p:'1800 DA'}]}
-      ], type:'prestige'},
-      { id:'suites', icon:'🥩', title:'Les Suites', sub:'Plats Principaux', cats:[
-        { label:'', items:[
-          {n:'Escalope de poulet',p:'1650 DA'},{n:'Entrecôte',p:'2300 DA'},
-          {n:"Poisson (Selon l'Arrivage)",p:'2300 DA'},{n:'Filet au Choix',p:'2500 DA'},
-          {n:'Émincé de veau Stroganoff',p:'2500 DA'},{n:"Côte d'agneau grillé",p:'2500 DA'},
-          {n:'Foie Grillé',p:'3200 DA'},{n:'Scampi de Crevettes',p:'3200 DA'}]}
-      ], type:'prestige'},
-      { id:'desserts-r', icon:'🍮', title:'Les Desserts', sub:'', cats:[
-        { label:'', items:[
-          {n:'Tiramisu',p:'400 DA'},{n:'Gâteau du jour',p:'450 DA'},
-          {n:'Crème Caramel',p:'450 DA'},{n:'Mousse au Chocolat',p:'450 DA'},
-          {n:'Fondant au chocolat',p:'500 DA'},{n:'Fruits de Saison',p:'500 DA'}]}
-      ], type:'prestige'},
-      { id:'boissons-r', icon:'☕', title:'Les Boissons', sub:'', type:'drinks', cats:[
-        { label:'Froides', type:'grid', items:[
-          {n:'Eau Minéral Gazeuse 1L',p:'250 DA'},{n:'Jus Naturel',p:'500 DA'},
-          {n:'Eau Minéral ½L',p:'150 DA'},{n:'Café Espresso Capsule',p:'200 DA'},
-          {n:'Boissons Gazeuses 33CL',p:'200 DA'},{n:'Café Noir',p:'200 DA'},
-          {n:'Boissons Gazeuses 1L',p:'300 DA'},{n:'Cappuccino',p:'200 DA'},
-          {n:'Boisson Gazeuses Canettes',p:'200 DA'},{n:'Chocolat Chaud',p:'200 DA'},
-          {n:'Jus 33CL',p:'200 DA'},{n:'Café au Lait',p:'200 DA'},
-          {n:'Jus 1L',p:'300 DA'},{n:'Thé / Tisane',p:'200 DA'}]}
-      ]}
+      {id:'entrees',icon:'🥗',title:'Les Entrées',sub:'',type:'prestige',cats:[
+        {label:'Froides',items:[{n:'Salade de Poulet',p:'850 DA'},{n:'Salade Fraîcheur',p:'900 DA'},{n:'Salade de Thon',p:'1000 DA'},{n:'Salade César',p:'1200 DA'},{n:'Salade de Crevette',p:'1500 DA'},{n:'Cocktail de Crevette',p:'1500 DA'}]},
+        {label:'Chaudes',items:[{n:'Omelette au choix',p:'800 DA'},{n:'Soupe du Jour',p:'900 DA'},{n:'Gratin aux choix',p:'1500 DA'},{n:'Crevettes sauce tomate / sautée',p:'1800 DA'}]}]},
+      {id:'pates',icon:'🍝',title:'Les Pâtes',sub:'',type:'prestige',cats:[
+        {label:'',items:[{n:'Spaghetti Alfredo',p:'1200 DA'},{n:'Spaghetti Bolognaise',p:'1500 DA'},{n:'Spaghetti sauce crevettes',p:'1800 DA'}]}]},
+      {id:'suites',icon:'🥩',title:'Les Suites',sub:'Plats Principaux',type:'prestige',cats:[
+        {label:'',items:[{n:'Escalope de poulet',p:'1650 DA'},{n:'Entrecôte',p:'2300 DA'},{n:"Poisson (Selon l'Arrivage)",p:'2300 DA'},{n:'Filet au Choix',p:'2500 DA'},{n:'Émincé de veau Stroganoff',p:'2500 DA'},{n:"Côte d'agneau grillé",p:'2500 DA'},{n:'Foie Grillé',p:'3200 DA'},{n:'Scampi de Crevettes',p:'3200 DA'}]}]},
+      {id:'desserts-r',icon:'🍮',title:'Les Desserts',sub:'',type:'prestige',cats:[
+        {label:'',items:[{n:'Tiramisu',p:'400 DA'},{n:'Gâteau du jour',p:'450 DA'},{n:'Crème Caramel',p:'450 DA'},{n:'Mousse au Chocolat',p:'450 DA'},{n:'Fondant au chocolat',p:'500 DA'},{n:'Fruits de Saison',p:'500 DA'}]}]},
+      {id:'boissons-r',icon:'☕',title:'Les Boissons',sub:'',type:'drinks',cats:[
+        {label:'',type:'grid',items:[{n:'Eau Minéral Gazeuse 1L',p:'250 DA'},{n:'Jus Naturel',p:'500 DA'},{n:'Eau Minéral ½L',p:'150 DA'},{n:'Café Espresso Capsule',p:'200 DA'},{n:'Boissons Gazeuses 33CL',p:'200 DA'},{n:'Café Noir',p:'200 DA'},{n:'Boissons Gazeuses 1L',p:'300 DA'},{n:'Cappuccino',p:'200 DA'},{n:'Boisson Gazeuses Canettes',p:'200 DA'},{n:'Chocolat Chaud',p:'200 DA'},{n:'Jus 33CL',p:'200 DA'},{n:'Café au Lait',p:'200 DA'},{n:'Jus 1L',p:'300 DA'},{n:'Thé / Tisane',p:'200 DA'}]}]}
     ],
-
     pizzeria:[
-      { id:'pizzas', icon:'🍕', title:'Nos Pizzas', sub:'Pizzeria Belle Vue', brand:true, cats:[
-        { label:'Sauce Tomate', items:[
-          {n:'Margherita',d:'Sauce tomate / fromage / olive',p:'450 DA'},
-          {n:'Végétarienne',d:'Aubergine / courgette / poivron / oignons / fromage / olive',p:'550 DA'},
-          {n:'Forestière',d:'Sauce tomate / fromage / champignon / olive',p:'550 DA'},
-          {n:'Viande Hachée Bolognaise',d:'Viande hachée / oignon / poivron / fromage / olive',p:'650 DA'},
-          {n:'Poulet Mariné',d:'Fromage / sauce tomate / poulet mariné',p:'650 DA'},
-          {n:'Thon',d:'Sauce tomate / fromage / olive / thon',p:'650 DA'},
-          {n:'Pécheure',d:'Sauce tomate / fromage / fruits de mer / olive',p:'800 DA'},
-          {n:'Royale',d:'Sauce tomate / crevette / fromage / olive / calamar',p:'850 DA'},
-          {n:'4 Saisons',d:'Viande hachée / champignon / thon / poulet / olive / fromage',p:'850 DA'},
-          {n:'4 Fromages',d:'Camembert / Mozzarella / Cheddar / Gruyère',p:'900 DA'},
-          {n:'Pizza Belle Vue ⭐',d:'Sauce tomate / fromage / olive / fruits de mer / viande hachée / câpre / salami',p:'1000 DA'}]},
-        { label:'Boisées — Sauce Blanche', items:[
-          {n:'Végétarienne',d:'Sauce blanche / champignon / fromage / aubergine / courgette / poivron / olive',p:'650 DA'},
-          {n:'Poulet',d:'Sauce blanche / fromage / poulet / olive',p:'650 DA'},
-          {n:'4 Fromages',d:'Sauce blanche / 4 fromages / sauce de fromage',p:'900 DA'}]}
-      ], type:'standard'},
-      { id:'souffles', icon:'🫓', title:'Nos Soufflés', sub:'', cats:[
-        { label:'', items:[
-          {n:'Poulet',d:'Sauce tomate / poulet / fromage',p:'500 DA'},
-          {n:'Viande Hachée',d:'Fromage / viande haché / champignon',p:'600 DA'},
-          {n:'Thon',d:'Sauce tomate / thon / fromage',p:'600 DA'},
-          {n:'Fromages',d:'4 fromages / sauce blanche',p:'750 DA'},
-          {n:'Fruits de Mer',d:'Sauce tomate / fromage / fruits de mer',p:'850 DA'}]}
-      ], type:'standard'},
-      { id:'tacos', icon:'🌮', title:'Nos Tacos', sub:'', cats:[
-        { label:'', items:[
-          {n:'Poulet',p:'550 DA'},{n:'Poulet Double Fromage',p:'700 DA'},
-          {n:'Viande Hachée',p:'650 DA'},{n:'Viande Hachée Double Fromage',p:'700 DA'}]}
-      ], type:'standard'},
-      { id:'desserts-p', icon:'🍦', title:'Desserts & Glaces', sub:'', type:'mixed', cats:[
-        { label:'Crêpes', items:[
-          {n:'Crêpe à la Confiture',p:'350 DA'},{n:'Crêpe au Miel',p:'350 DA'},
-          {n:'Crêpe Nutella',p:'400 DA'},{n:'Crêpe Nutella Banane',p:'500 DA'}]},
-        { label:'Glaces', items:[
-          {n:'1 Boule de Glace',p:'200 DA'},{n:'2 Boules de Glace',p:'350 DA'}]},
-        { label:'Coupes Spéciales', type:'ice', items:[
-          {n:'Coupe Arc en Ciel',d:'03 boules parfumées variées',p:'500 DA'},
-          {n:'Coupe Oreo',d:'03 boules parfumées variées',p:'550 DA'},
-          {n:'Coupe Fraîcheur Fruity',d:'03 boules parfumées variées',p:'550 DA'},
-          {n:'Glace Mirador ⭐',d:'04 boules au choix & fruits, crème chantilly',p:'700 DA'},
-          {n:'Coupe « Oslo »',d:'05 boules parfumées, fruits, crème chantilly',p:'900 DA'}]}
-      ]},
-      { id:'boissons-p', icon:'🥤', title:'Boissons', sub:'', type:'drinks', cats:[
-        { label:'Froides', type:'grid', items:[
-          {n:'Eau Gazeuse 0.5L',p:'100 DA'},{n:'Eau Gazeuse 1.5L',p:'150 DA'},
-          {n:'Eau Minérale 0.5L',p:'100 DA'},{n:'Eau Minérale 1.5L',p:'150 DA'},
-          {n:'Boisson Gazeuse 33CL',p:'200 DA'},{n:'Boisson Gazeuse Canette',p:'200 DA'},
-          {n:'Boisson Gazeuse 1L',p:'250 DA'},{n:'Jus 33CL',p:'200 DA'},
-          {n:'Jus 1L',p:'300 DA'},{n:'Jus Naturel',p:'500 DA'}]},
-        { label:'Chaudes', type:'grid', items:[
-          {n:'Café au Lait',p:'200 DA'},{n:'Café Noir',p:'200 DA'},
-          {n:'Café Espresso Capsule',p:'200 DA'},{n:'Capuccino',p:'200 DA'},
-          {n:'Thé',p:'200 DA'},{n:'Tisane',p:'200 DA'},
-          {n:'Chocolat Chaud',p:'200 DA'},{n:'',p:''}]}
-      ]},
-      { id:'packs', icon:'🎁', title:'Offres Spéciales', sub:'', type:'packs', packs:[
+      {id:'pizzas',icon:'🍕',title:'Nos Pizzas',sub:'Pizzeria Belle Vue',type:'standard',brand:true,cats:[
+        {label:'Sauce Tomate',items:[{n:'Margherita',d:'Sauce tomate / fromage / olive',p:'450 DA'},{n:'Végétarienne',d:'Aubergine / courgette / poivron / oignons / fromage / olive',p:'550 DA'},{n:'Forestière',d:'Sauce tomate / fromage / champignon / olive',p:'550 DA'},{n:'Viande Hachée Bolognaise',d:'Viande hachée / oignon / poivron / fromage / olive',p:'650 DA'},{n:'Poulet Mariné',d:'Fromage / sauce tomate / poulet mariné',p:'650 DA'},{n:'Thon',d:'Sauce tomate / fromage / olive / thon',p:'650 DA'},{n:'Pécheure',d:'Sauce tomate / fromage / fruits de mer / olive',p:'800 DA'},{n:'Royale',d:'Sauce tomate / crevette / fromage / olive / calamar',p:'850 DA'},{n:'4 Saisons',d:'Viande hachée / champignon / thon / poulet / olive / fromage',p:'850 DA'},{n:'4 Fromages',d:'Camembert / Mozzarella / Cheddar / Gruyère',p:'900 DA'},{n:'Pizza Belle Vue ⭐',d:'Fromage / olive / fruits de mer / viande hachée / câpre / salami',p:'1000 DA'}]},
+        {label:'Boisées — Sauce Blanche',items:[{n:'Végétarienne',d:'Sauce blanche / champignon / fromage / légumes / olive',p:'650 DA'},{n:'Poulet',d:'Sauce blanche / fromage / poulet / olive',p:'650 DA'},{n:'4 Fromages',d:'Sauce blanche / 4 fromages',p:'900 DA'}]}]},
+      {id:'souffles',icon:'🫓',title:'Nos Soufflés',sub:'',type:'standard',cats:[
+        {label:'',items:[{n:'Poulet',d:'Sauce tomate / poulet / fromage',p:'500 DA'},{n:'Viande Hachée',d:'Fromage / viande haché / champignon',p:'600 DA'},{n:'Thon',d:'Sauce tomate / thon / fromage',p:'600 DA'},{n:'Fromages',d:'4 fromages / sauce blanche',p:'750 DA'},{n:'Fruits de Mer',d:'Sauce tomate / fromage / fruits de mer',p:'850 DA'}]}]},
+      {id:'tacos',icon:'🌮',title:'Nos Tacos',sub:'',type:'standard',cats:[
+        {label:'',items:[{n:'Poulet',p:'550 DA'},{n:'Poulet Double Fromage',p:'700 DA'},{n:'Viande Hachée',p:'650 DA'},{n:'Viande Hachée Double Fromage',p:'700 DA'}]}]},
+      {id:'desserts-p',icon:'🍦',title:'Desserts & Glaces',sub:'',type:'mixed',cats:[
+        {label:'Crêpes',items:[{n:'Crêpe à la Confiture',p:'350 DA'},{n:'Crêpe au Miel',p:'350 DA'},{n:'Crêpe Nutella',p:'400 DA'},{n:'Crêpe Nutella Banane',p:'500 DA'}]},
+        {label:'Glaces',items:[{n:'1 Boule de Glace',p:'200 DA'},{n:'2 Boules de Glace',p:'350 DA'}]},
+        {label:'Coupes Spéciales',type:'ice',items:[{n:'Coupe Arc en Ciel',d:'03 boules parfumées variées',p:'500 DA'},{n:'Coupe Oreo',d:'03 boules parfumées variées',p:'550 DA'},{n:'Coupe Fraîcheur Fruity',d:'03 boules parfumées variées',p:'550 DA'},{n:'Glace Mirador ⭐',d:'04 boules + fruits + crème chantilly',p:'700 DA'},{n:'Coupe « Oslo »',d:'05 boules + fruits + crème chantilly',p:'900 DA'}]}]},
+      {id:'boissons-p',icon:'🥤',title:'Boissons',sub:'',type:'drinks',cats:[
+        {label:'Froides',type:'grid',items:[{n:'Eau Gazeuse 0.5L',p:'100 DA'},{n:'Eau Gazeuse 1.5L',p:'150 DA'},{n:'Eau Minérale 0.5L',p:'100 DA'},{n:'Eau Minérale 1.5L',p:'150 DA'},{n:'Boisson Gazeuse 33CL',p:'200 DA'},{n:'Boisson Gazeuse Canette',p:'200 DA'},{n:'Boisson Gazeuse 1L',p:'250 DA'},{n:'Jus 33CL',p:'200 DA'},{n:'Jus 1L',p:'300 DA'},{n:'Jus Naturel',p:'500 DA'}]},
+        {label:'Chaudes',type:'grid',items:[{n:'Café au Lait',p:'200 DA'},{n:'Café Noir',p:'200 DA'},{n:'Café Espresso Capsule',p:'200 DA'},{n:'Capuccino',p:'200 DA'},{n:'Thé',p:'200 DA'},{n:'Tisane',p:'200 DA'},{n:'Chocolat Chaud',p:'200 DA'},{n:'',p:''}]}]},
+      {id:'packs',icon:'🎁',title:'Offres Spéciales',sub:'',type:'packs',packs:[
         {title:'🎯 Pack Trio',details:'3 Pizzas Poulet Mariné\n+ 1 BTL Coca Cola 1L OFFERTE',price:'1950 DA'},
         {title:'🎯 Pack Quatro',details:'4 Pizzas Margherita\n+ 1 BTL Coca Cola 1L OFFERTE',price:'1800 DA'},
-        {title:'👶 Pack Enfant',details:'1 Mini Pizza + 1 Boisson + 1 Dessert',price:'800 DA',special:true}
-      ]}
-    ]
-  },
-
-  ar:{
-    dir:'rtl',
-    welcome:`<div class="welcome-ar">أهلاً وسهلاً في فندق المنظر الجميل</div><div class="welcome-en" style="direction:rtl;">فيلفيلة · سكيكدة · الجزائر</div>`,
-    beach_title:'اطلب من الشاطئ مباشرة',
-    beach_sub:'فريقنا يصلك على الرمال · البيتزيريا ومطعم بريستيج في خدمتك',
+        {title:'👶 Pack Enfant',details:'1 Mini Pizza + 1 Boisson + 1 Dessert',price:'800 DA',special:true}]}
+    ]},
+  ar:{dir:'rtl',
+    welcome:`<div style="font-family:'Amiri',serif;font-size:19px;color:#e8c97a;direction:rtl;margin-bottom:3px;">أهلاً وسهلاً في فندق المنظر الجميل</div><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.26);margin-bottom:18px;">فيلفيلة · سكيكدة · الجزائر</div>`,
+    beach_title:'اطلب من الشاطئ مباشرة',beach_sub:'فريقنا يصلك على الرمال · البيتزيريا ومطعم بريستيج في خدمتك',
     footer:`<div class="footer-closing-ar">شكراً لزيارتكم · بالصحة والعافية</div><div class="footer-sub">نتطلع إلى استقبالكم مجدداً</div>`,
     panel_labels:['مطعم بريستيج','بيتزيريا بيل فو'],
-
     restaurant:[
-      { id:'entrees-ar', icon:'🥗', title:'المقبلات', ar:true, sub:'', cats:[
-        { label:'باردة', items:[
-          {n:'سلطة الدجاج',p:'850 DA'},{n:'سلطة الفريشور',p:'900 DA'},
-          {n:'سلطة التونة',p:'1000 DA'},{n:'سلطة سيزار',p:'1200 DA'},
-          {n:'سلطة الروبيان',p:'1500 DA'},{n:'كوكتيل الروبيان',p:'1500 DA'}]},
-        { label:'ساخنة', items:[
-          {n:'عجة على الاختيار',p:'800 DA'},{n:'حساء اليوم',p:'900 DA'},
-          {n:'غراتان على الاختيار',p:'1500 DA'},{n:'روبيان بصلصة الطماطم / مقلي',p:'1800 DA'}]}
-      ], type:'prestige'},
-      { id:'pates-ar', icon:'🍝', title:'المعكرونة', ar:true, sub:'', cats:[
-        { label:'', items:[
-          {n:'سباغيتي ألفريدو',p:'1200 DA'},{n:'سباغيتي بولونيز',p:'1500 DA'},
-          {n:'سباغيتي بصلصة الروبيان',p:'1800 DA'}]}
-      ], type:'prestige'},
-      { id:'suites-ar', icon:'🥩', title:'الأطباق الرئيسية', ar:true, sub:'', cats:[
-        { label:'', items:[
-          {n:'إيسكالوب دجاج',p:'1650 DA'},{n:'أونتريكوت',p:'2300 DA'},
-          {n:'سمك (حسب الوصول)',p:'2300 DA'},{n:'فيليه على الاختيار',p:'2500 DA'},
-          {n:'شرائح فيلو ستروغانوف',p:'2500 DA'},{n:'ضلع خروف مشوي',p:'2500 DA'},
-          {n:'كبد مشوي',p:'3200 DA'},{n:'سكامبي روبيان',p:'3200 DA'}]}
-      ], type:'prestige'},
-      { id:'desserts-r-ar', icon:'🍮', title:'الحلويات', ar:true, sub:'', cats:[
-        { label:'', items:[
-          {n:'تيراميسو',p:'400 DA'},{n:'كيك اليوم',p:'450 DA'},
-          {n:'كريم كراميل',p:'450 DA'},{n:'موس الشوكولا',p:'450 DA'},
-          {n:'فوندان الشوكولا',p:'500 DA'},{n:'فواكه الموسم',p:'500 DA'}]}
-      ], type:'prestige'},
-      { id:'bois-r-ar', icon:'☕', title:'المشروبات', ar:true, sub:'', type:'drinks', cats:[
-        { label:'', type:'grid', items:[
-          {n:'ماء غازي 1ل',p:'250 DA'},{n:'عصير طبيعي',p:'500 DA'},
-          {n:'ماء غازي ½ل',p:'150 DA'},{n:'إسبريسو كابسول',p:'200 DA'},
-          {n:'مشروب غازي 33CL',p:'200 DA'},{n:'قهوة سوداء',p:'200 DA'},
-          {n:'مشروب غازي 1ل',p:'300 DA'},{n:'كابوتشينو',p:'200 DA'},
-          {n:'مشروب غازي علبة',p:'200 DA'},{n:'شوكولا ساخنة',p:'200 DA'},
-          {n:'عصير 33CL',p:'200 DA'},{n:'قهوة بالحليب',p:'200 DA'},
-          {n:'عصير 1ل',p:'300 DA'},{n:'شاي / تيزان',p:'200 DA'}]}
-      ]}
+      {id:'entrees-ar',icon:'🥗',title:'المقبلات',ar:true,sub:'',type:'prestige',cats:[
+        {label:'باردة',items:[{n:'سلطة الدجاج',p:'850 DA'},{n:'سلطة الفريشور',p:'900 DA'},{n:'سلطة التونة',p:'1000 DA'},{n:'سلطة سيزار',p:'1200 DA'},{n:'سلطة الروبيان',p:'1500 DA'},{n:'كوكتيل الروبيان',p:'1500 DA'}]},
+        {label:'ساخنة',items:[{n:'عجة على الاختيار',p:'800 DA'},{n:'حساء اليوم',p:'900 DA'},{n:'غراتان على الاختيار',p:'1500 DA'},{n:'روبيان بصلصة الطماطم / مقلي',p:'1800 DA'}]}]},
+      {id:'pates-ar',icon:'🍝',title:'المعكرونة',ar:true,sub:'',type:'prestige',cats:[
+        {label:'',items:[{n:'سباغيتي ألفريدو',p:'1200 DA'},{n:'سباغيتي بولونيز',p:'1500 DA'},{n:'سباغيتي بصلصة الروبيان',p:'1800 DA'}]}]},
+      {id:'suites-ar',icon:'🥩',title:'الأطباق الرئيسية',ar:true,sub:'',type:'prestige',cats:[
+        {label:'',items:[{n:'إيسكالوب دجاج',p:'1650 DA'},{n:'أونتريكوت',p:'2300 DA'},{n:'سمك (حسب الوصول)',p:'2300 DA'},{n:'فيليه على الاختيار',p:'2500 DA'},{n:'شرائح فيلو ستروغانوف',p:'2500 DA'},{n:'ضلع خروف مشوي',p:'2500 DA'},{n:'كبد مشوي',p:'3200 DA'},{n:'سكامبي روبيان',p:'3200 DA'}]}]},
+      {id:'desserts-r-ar',icon:'🍮',title:'الحلويات',ar:true,sub:'',type:'prestige',cats:[
+        {label:'',items:[{n:'تيراميسو',p:'400 DA'},{n:'كيك اليوم',p:'450 DA'},{n:'كريم كراميل',p:'450 DA'},{n:'موس الشوكولا',p:'450 DA'},{n:'فوندان الشوكولا',p:'500 DA'},{n:'فواكه الموسم',p:'500 DA'}]}]},
+      {id:'bois-r-ar',icon:'☕',title:'المشروبات',ar:true,sub:'',type:'drinks',cats:[
+        {label:'',type:'grid',items:[{n:'ماء غازي 1ل',p:'250 DA'},{n:'عصير طبيعي',p:'500 DA'},{n:'ماء غازي ½ل',p:'150 DA'},{n:'إسبريسو كابسول',p:'200 DA'},{n:'مشروب غازي 33CL',p:'200 DA'},{n:'قهوة سوداء',p:'200 DA'},{n:'مشروب غازي 1ل',p:'300 DA'},{n:'كابوتشينو',p:'200 DA'},{n:'مشروب غازي علبة',p:'200 DA'},{n:'شوكولا ساخنة',p:'200 DA'},{n:'عصير 33CL',p:'200 DA'},{n:'قهوة بالحليب',p:'200 DA'},{n:'عصير 1ل',p:'300 DA'},{n:'شاي / تيزان',p:'200 DA'}]}]}
     ],
-
     pizzeria:[
-      { id:'pizzas-ar', icon:'🍕', title:'البيتزا', ar:true, sub:'بيتزيريا بيل فو', brand:true, cats:[
-        { label:'صلصة الطماطم', items:[
-          {n:'مارغريتا',d:'صلصة طماطم / جبن / زيتون',p:'450 DA'},
-          {n:'نباتية',d:'باذنجان / كوسة / فلفل / بصل / جبن / زيتون',p:'550 DA'},
-          {n:'فوريستيير',d:'صلصة طماطم / جبن / مشروم / زيتون',p:'550 DA'},
-          {n:'لحم مفروم بولونيز',d:'لحم / بصل / فلفل / جبن / زيتون',p:'650 DA'},
-          {n:'دجاج متبل',d:'جبن / صلصة طماطم / دجاج متبل',p:'650 DA'},
-          {n:'تونة',d:'صلصة طماطم / جبن / زيتون / تونة',p:'650 DA'},
-          {n:'بيشور',d:'صلصة طماطم / جبن / مأكولات بحرية / زيتون',p:'800 DA'},
-          {n:'رويال',d:'روبيان / جبن / زيتون / حبار',p:'850 DA'},
-          {n:'4 مواسم',d:'لحم / مشروم / تونة / دجاج / زيتون / جبن',p:'850 DA'},
-          {n:'4 أجبان',d:'كممبير / موزاريلا / شيدر / غرويير',p:'900 DA'},
-          {n:'بيتزا بيل فو ⭐',d:'جبن / زيتون / مأكولات بحرية / لحم / كبر / سلامي',p:'1000 DA'}]},
-        { label:'صلصة بيضاء', items:[
-          {n:'نباتية',d:'صلصة بيضاء / مشروم / جبن / باذنجان / كوسة / فلفل / زيتون',p:'650 DA'},
-          {n:'دجاج',d:'صلصة بيضاء / جبن / دجاج / زيتون',p:'650 DA'},
-          {n:'4 أجبان',d:'صلصة بيضاء / 4 أجبان / صلصة الجبن',p:'900 DA'}]}
-      ], type:'standard'},
-      { id:'souffles-ar', icon:'🫓', title:'السوفليه', ar:true, sub:'', cats:[
-        { label:'', items:[
-          {n:'دجاج',d:'صلصة طماطم / دجاج / جبن',p:'500 DA'},
-          {n:'لحم مفروم',d:'جبن / لحم مفروم / مشروم',p:'600 DA'},
-          {n:'تونة',d:'صلصة طماطم / تونة / جبن',p:'600 DA'},
-          {n:'أجبان',d:'4 أجبان / صلصة بيضاء',p:'750 DA'},
-          {n:'مأكولات بحرية',d:'صلصة طماطم / جبن / مأكولات بحرية',p:'850 DA'}]}
-      ], type:'standard'},
-      { id:'tacos-ar', icon:'🌮', title:'التاكوس', ar:true, sub:'', cats:[
-        { label:'', items:[
-          {n:'دجاج',p:'550 DA'},{n:'دجاج بجبن مضاعف',p:'700 DA'},
-          {n:'لحم مفروم',p:'650 DA'},{n:'لحم مفروم بجبن مضاعف',p:'700 DA'}]}
-      ], type:'standard'},
-      { id:'desserts-p-ar', icon:'🍦', title:'الحلويات والآيس كريم', ar:true, sub:'', type:'mixed', cats:[
-        { label:'كريب', items:[
-          {n:'كريب بالمربى',p:'350 DA'},{n:'كريب بالعسل',p:'350 DA'},
-          {n:'كريب نوتيلا',p:'400 DA'},{n:'كريب نوتيلا موز',p:'500 DA'}]},
-        { label:'آيس كريم', items:[
-          {n:'كرة واحدة',p:'200 DA'},{n:'كرتان',p:'350 DA'}]},
-        { label:'كوبات خاصة', type:'ice', items:[
-          {n:'كوب قوس قزح',d:'3 كرات بنكهات متنوعة',p:'500 DA'},
-          {n:'كوب أوريو',d:'3 كرات بنكهات متنوعة',p:'550 DA'},
-          {n:'كوب فريشور فروتي',d:'3 كرات بنكهات متنوعة',p:'550 DA'},
-          {n:'جلاسي ميرادور ⭐',d:'4 كرات + فواكه + كريمة شانتيلي',p:'700 DA'},
-          {n:'كوب أوسلو',d:'5 كرات + فواكه + كريمة شانتيلي',p:'900 DA'}]}
-      ]},
-      { id:'bois-p-ar', icon:'🥤', title:'المشروبات', ar:true, sub:'', type:'drinks', cats:[
-        { label:'باردة', type:'grid', items:[
-          {n:'ماء غازي 0.5ل',p:'100 DA'},{n:'ماء غازي 1.5ل',p:'150 DA'},
-          {n:'ماء معدني 0.5ل',p:'100 DA'},{n:'ماء معدني 1.5ل',p:'150 DA'},
-          {n:'مشروب غازي 33CL',p:'200 DA'},{n:'مشروب غازي علبة',p:'200 DA'},
-          {n:'مشروب غازي 1ل',p:'250 DA'},{n:'عصير 33CL',p:'200 DA'},
-          {n:'عصير 1ل',p:'300 DA'},{n:'عصير طبيعي',p:'500 DA'}]},
-        { label:'ساخنة', type:'grid', items:[
-          {n:'قهوة بالحليب',p:'200 DA'},{n:'قهوة سوداء',p:'200 DA'},
-          {n:'إسبريسو كابسول',p:'200 DA'},{n:'كابوتشينو',p:'200 DA'},
-          {n:'شاي',p:'200 DA'},{n:'تيزان',p:'200 DA'},
-          {n:'شوكولا ساخنة',p:'200 DA'},{n:'',p:''}]}
-      ]},
-      { id:'packs-ar', icon:'🎁', title:'العروض الخاصة', ar:true, sub:'', type:'packs', packs:[
+      {id:'pizzas-ar',icon:'🍕',title:'البيتزا',ar:true,sub:'بيتزيريا بيل فو',type:'standard',brand:true,cats:[
+        {label:'صلصة الطماطم',items:[{n:'مارغريتا',d:'صلصة طماطم / جبن / زيتون',p:'450 DA'},{n:'نباتية',d:'باذنجان / كوسة / فلفل / بصل / جبن / زيتون',p:'550 DA'},{n:'فوريستيير',d:'مشروم / جبن / زيتون',p:'550 DA'},{n:'لحم مفروم بولونيز',d:'لحم / بصل / فلفل / جبن / زيتون',p:'650 DA'},{n:'دجاج متبل',d:'جبن / صلصة طماطم / دجاج متبل',p:'650 DA'},{n:'تونة',d:'صلصة طماطم / جبن / زيتون / تونة',p:'650 DA'},{n:'بيشور',d:'جبن / مأكولات بحرية / زيتون',p:'800 DA'},{n:'رويال',d:'روبيان / جبن / زيتون / حبار',p:'850 DA'},{n:'4 مواسم',d:'لحم / مشروم / تونة / دجاج / زيتون / جبن',p:'850 DA'},{n:'4 أجبان',d:'كممبير / موزاريلا / شيدر / غرويير',p:'900 DA'},{n:'بيتزا بيل فو ⭐',d:'جبن / زيتون / مأكولات بحرية / لحم / كبر / سلامي',p:'1000 DA'}]},
+        {label:'صلصة بيضاء',items:[{n:'نباتية',d:'صلصة بيضاء / مشروم / جبن / خضروات / زيتون',p:'650 DA'},{n:'دجاج',d:'صلصة بيضاء / جبن / دجاج / زيتون',p:'650 DA'},{n:'4 أجبان',d:'صلصة بيضاء / 4 أجبان',p:'900 DA'}]}]},
+      {id:'souffles-ar',icon:'🫓',title:'السوفليه',ar:true,sub:'',type:'standard',cats:[
+        {label:'',items:[{n:'دجاج',d:'صلصة طماطم / دجاج / جبن',p:'500 DA'},{n:'لحم مفروم',d:'جبن / لحم مفروم / مشروم',p:'600 DA'},{n:'تونة',d:'صلصة طماطم / تونة / جبن',p:'600 DA'},{n:'أجبان',d:'4 أجبان / صلصة بيضاء',p:'750 DA'},{n:'مأكولات بحرية',d:'صلصة طماطم / جبن / مأكولات بحرية',p:'850 DA'}]}]},
+      {id:'tacos-ar',icon:'🌮',title:'التاكوس',ar:true,sub:'',type:'standard',cats:[
+        {label:'',items:[{n:'دجاج',p:'550 DA'},{n:'دجاج بجبن مضاعف',p:'700 DA'},{n:'لحم مفروم',p:'650 DA'},{n:'لحم مفروم بجبن مضاعف',p:'700 DA'}]}]},
+      {id:'desserts-p-ar',icon:'🍦',title:'الحلويات والآيس كريم',ar:true,sub:'',type:'mixed',cats:[
+        {label:'كريب',items:[{n:'كريب بالمربى',p:'350 DA'},{n:'كريب بالعسل',p:'350 DA'},{n:'كريب نوتيلا',p:'400 DA'},{n:'كريب نوتيلا موز',p:'500 DA'}]},
+        {label:'آيس كريم',items:[{n:'كرة واحدة',p:'200 DA'},{n:'كرتان',p:'350 DA'}]},
+        {label:'كوبات خاصة',type:'ice',items:[{n:'كوب قوس قزح',d:'3 كرات بنكهات متنوعة',p:'500 DA'},{n:'كوب أوريو',d:'3 كرات بنكهات متنوعة',p:'550 DA'},{n:'كوب فريشور فروتي',d:'3 كرات بنكهات متنوعة',p:'550 DA'},{n:'جلاسي ميرادور ⭐',d:'4 كرات + فواكه + كريمة شانتيلي',p:'700 DA'},{n:'كوب أوسلو',d:'5 كرات + فواكه + كريمة شانتيلي',p:'900 DA'}]}]},
+      {id:'bois-p-ar',icon:'🥤',title:'المشروبات',ar:true,sub:'',type:'drinks',cats:[
+        {label:'باردة',type:'grid',items:[{n:'ماء غازي 0.5ل',p:'100 DA'},{n:'ماء غازي 1.5ل',p:'150 DA'},{n:'ماء معدني 0.5ل',p:'100 DA'},{n:'ماء معدني 1.5ل',p:'150 DA'},{n:'مشروب غازي 33CL',p:'200 DA'},{n:'مشروب غازي علبة',p:'200 DA'},{n:'مشروب غازي 1ل',p:'250 DA'},{n:'عصير 33CL',p:'200 DA'},{n:'عصير 1ل',p:'300 DA'},{n:'عصير طبيعي',p:'500 DA'}]},
+        {label:'ساخنة',type:'grid',items:[{n:'قهوة بالحليب',p:'200 DA'},{n:'قهوة سوداء',p:'200 DA'},{n:'إسبريسو كابسول',p:'200 DA'},{n:'كابوتشينو',p:'200 DA'},{n:'شاي',p:'200 DA'},{n:'تيزان',p:'200 DA'},{n:'شوكولا ساخنة',p:'200 DA'},{n:'',p:''}]}]},
+      {id:'packs-ar',icon:'🎁',title:'العروض الخاصة',ar:true,sub:'',type:'packs',packs:[
         {title:'🎯 باك تريو',details:'3 بيتزا دجاج متبل\n+ زجاجة كوكا كولا 1ل هدية',price:'1950 DA'},
         {title:'🎯 باك كواترو',details:'4 بيتزا مارغريتا\n+ زجاجة كوكا كولا 1ل هدية',price:'1800 DA'},
-        {title:'👶 باك الأطفال',details:'بيتزا صغيرة + مشروب + حلوى',price:'800 DA',special:true}
-      ]}
-    ]
-  },
-
-  en:{
-    dir:'ltr',
-    welcome:`<div class="welcome-fr">Welcome to your gastronomic experience</div><div class="welcome-en">Filfila · Skikda · Algeria</div>`,
-    beach_title:'ORDER FROM THE BEACH',
-    beach_sub:'Our staff delivers directly to your spot · Pizzeria & Prestige Restaurant',
+        {title:'👶 باك الأطفال',details:'بيتزا صغيرة + مشروب + حلوى',price:'800 DA',special:true}]}
+    ]},
+  en:{dir:'ltr',
+    welcome:`<div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(255,255,255,0.55);margin-bottom:3px;">Welcome to your gastronomic experience</div><div style="font-size:9px;letter-spacing:3px;color:rgba(255,255,255,0.26);margin-bottom:18px;text-transform:uppercase;">Filfila · Skikda · Algeria</div>`,
+    beach_title:'ORDER FROM THE BEACH',beach_sub:'Our staff delivers directly to your spot · Pizzeria & Prestige Restaurant',
     footer:`<div class="footer-closing">Thank you for your visit · Enjoy your meal</div><div class="footer-sub">We look forward to welcoming you again</div>`,
     panel_labels:['Prestige Restaurant','Pizzeria Belle Vue'],
-
     restaurant:[
-      { id:'entrees-en', icon:'🥗', title:'Starters', sub:'', cats:[
-        { label:'Cold', items:[
-          {n:'Chicken Salad',p:'850 DA'},{n:'Freshness Salad',p:'900 DA'},
-          {n:'Tuna Salad',p:'1000 DA'},{n:'Caesar Salad',p:'1200 DA'},
-          {n:'Shrimp Salad',p:'1500 DA'},{n:'Shrimp Cocktail',p:'1500 DA'}]},
-        { label:'Hot', items:[
-          {n:'Omelette of your choice',p:'800 DA'},{n:"Chef's Soup",p:'900 DA'},
-          {n:'Gratin of your choice',p:'1500 DA'},{n:'Shrimp in tomato sauce / sautéed',p:'1800 DA'}]}
-      ], type:'prestige'},
-      { id:'pates-en', icon:'🍝', title:'Pasta', sub:'', cats:[
-        { label:'', items:[
-          {n:'Spaghetti Alfredo',p:'1200 DA'},{n:'Spaghetti Bolognese',p:'1500 DA'},
-          {n:'Spaghetti with Shrimp Sauce',p:'1800 DA'}]}
-      ], type:'prestige'},
-      { id:'suites-en', icon:'🥩', title:'Main Courses', sub:'', cats:[
-        { label:'', items:[
-          {n:'Chicken Escalope',p:'1650 DA'},{n:'Entrecôte',p:'2300 DA'},
-          {n:'Fish (upon arrival)',p:'2300 DA'},{n:'Fillet of your choice',p:'2500 DA'},
-          {n:'Veal Stroganoff',p:'2500 DA'},{n:'Grilled Lamb Chop',p:'2500 DA'},
-          {n:'Grilled Liver',p:'3200 DA'},{n:'Shrimp Scampi',p:'3200 DA'}]}
-      ], type:'prestige'},
-      { id:'desserts-r-en', icon:'🍮', title:'Desserts', sub:'', cats:[
-        { label:'', items:[
-          {n:'Tiramisu',p:'400 DA'},{n:"Today's Cake",p:'450 DA'},
-          {n:'Crème Caramel',p:'450 DA'},{n:'Chocolate Mousse',p:'450 DA'},
-          {n:'Chocolate Fondant',p:'500 DA'},{n:'Seasonal Fruits',p:'500 DA'}]}
-      ], type:'prestige'},
-      { id:'bois-r-en', icon:'☕', title:'Drinks', sub:'', type:'drinks', cats:[
-        { label:'', type:'grid', items:[
-          {n:'Sparkling Water 1L',p:'250 DA'},{n:'Fresh Juice',p:'500 DA'},
-          {n:'Sparkling Water ½L',p:'150 DA'},{n:'Espresso Capsule',p:'200 DA'},
-          {n:'Soft Drink 33CL',p:'200 DA'},{n:'Black Coffee',p:'200 DA'},
-          {n:'Soft Drink 1L',p:'300 DA'},{n:'Cappuccino',p:'200 DA'},
-          {n:'Soft Drink Can',p:'200 DA'},{n:'Hot Chocolate',p:'200 DA'},
-          {n:'Juice 33CL',p:'200 DA'},{n:'Café au Lait',p:'200 DA'},
-          {n:'Juice 1L',p:'300 DA'},{n:'Tea / Herbal Tea',p:'200 DA'}]}
-      ]}
+      {id:'entrees-en',icon:'🥗',title:'Starters',sub:'',type:'prestige',cats:[
+        {label:'Cold',items:[{n:'Chicken Salad',p:'850 DA'},{n:'Freshness Salad',p:'900 DA'},{n:'Tuna Salad',p:'1000 DA'},{n:'Caesar Salad',p:'1200 DA'},{n:'Shrimp Salad',p:'1500 DA'},{n:'Shrimp Cocktail',p:'1500 DA'}]},
+        {label:'Hot',items:[{n:'Omelette of your choice',p:'800 DA'},{n:"Chef's Soup",p:'900 DA'},{n:'Gratin of your choice',p:'1500 DA'},{n:'Shrimp tomato sauce / sautéed',p:'1800 DA'}]}]},
+      {id:'pates-en',icon:'🍝',title:'Pasta',sub:'',type:'prestige',cats:[
+        {label:'',items:[{n:'Spaghetti Alfredo',p:'1200 DA'},{n:'Spaghetti Bolognese',p:'1500 DA'},{n:'Spaghetti Shrimp Sauce',p:'1800 DA'}]}]},
+      {id:'suites-en',icon:'🥩',title:'Main Courses',sub:'',type:'prestige',cats:[
+        {label:'',items:[{n:'Chicken Escalope',p:'1650 DA'},{n:'Entrecôte',p:'2300 DA'},{n:'Fish (upon arrival)',p:'2300 DA'},{n:'Fillet of your choice',p:'2500 DA'},{n:'Veal Stroganoff',p:'2500 DA'},{n:'Grilled Lamb Chop',p:'2500 DA'},{n:'Grilled Liver',p:'3200 DA'},{n:'Shrimp Scampi',p:'3200 DA'}]}]},
+      {id:'desserts-r-en',icon:'🍮',title:'Desserts',sub:'',type:'prestige',cats:[
+        {label:'',items:[{n:'Tiramisu',p:'400 DA'},{n:"Today's Cake",p:'450 DA'},{n:'Crème Caramel',p:'450 DA'},{n:'Chocolate Mousse',p:'450 DA'},{n:'Chocolate Fondant',p:'500 DA'},{n:'Seasonal Fruits',p:'500 DA'}]}]},
+      {id:'bois-r-en',icon:'☕',title:'Drinks',sub:'',type:'drinks',cats:[
+        {label:'',type:'grid',items:[{n:'Sparkling Water 1L',p:'250 DA'},{n:'Fresh Juice',p:'500 DA'},{n:'Sparkling Water ½L',p:'150 DA'},{n:'Espresso Capsule',p:'200 DA'},{n:'Soft Drink 33CL',p:'200 DA'},{n:'Black Coffee',p:'200 DA'},{n:'Soft Drink 1L',p:'300 DA'},{n:'Cappuccino',p:'200 DA'},{n:'Soft Drink Can',p:'200 DA'},{n:'Hot Chocolate',p:'200 DA'},{n:'Juice 33CL',p:'200 DA'},{n:'Café au Lait',p:'200 DA'},{n:'Juice 1L',p:'300 DA'},{n:'Tea / Herbal Tea',p:'200 DA'}]}]}
     ],
-
     pizzeria:[
-      { id:'pizzas-en', icon:'🍕', title:'Our Pizzas', sub:'Pizzeria Belle Vue', brand:true, cats:[
-        { label:'Tomato Sauce', items:[
-          {n:'Margherita',d:'Tomato sauce / cheese / olive',p:'450 DA'},
-          {n:'Vegetarian',d:'Eggplant / zucchini / pepper / onions / cheese / olive',p:'550 DA'},
-          {n:'Forestière',d:'Tomato sauce / cheese / mushrooms / olive',p:'550 DA'},
-          {n:'Minced Meat Bolognese',d:'Minced meat / onion / pepper / cheese / olive',p:'650 DA'},
-          {n:'Marinated Chicken',d:'Cheese / tomato sauce / marinated chicken',p:'650 DA'},
-          {n:'Tuna',d:'Tomato sauce / cheese / olive / tuna',p:'650 DA'},
-          {n:'Fisherman',d:'Tomato sauce / cheese / seafood / olive',p:'800 DA'},
-          {n:'Royale',d:'Shrimp / cheese / olive / squid',p:'850 DA'},
-          {n:'4 Seasons',d:'Minced meat / mushrooms / tuna / chicken / olive / cheese',p:'850 DA'},
-          {n:'4 Cheeses',d:'Camembert / Mozzarella / Cheddar / Gruyère',p:'900 DA'},
-          {n:'Belle Vue Pizza ⭐',d:'Cheese / olive / seafood / minced meat / capers / salami',p:'1000 DA'}]},
-        { label:'White Sauce', items:[
-          {n:'Vegetarian',d:'White sauce / mushrooms / cheese / eggplant / zucchini / pepper / olive',p:'650 DA'},
-          {n:'Chicken',d:'White sauce / cheese / chicken / olive',p:'650 DA'},
-          {n:'4 Cheeses',d:'White sauce / 4 cheeses / cheese sauce',p:'900 DA'}]}
-      ], type:'standard'},
-      { id:'souffles-en', icon:'🫓', title:'Soufflés', sub:'', cats:[
-        { label:'', items:[
-          {n:'Chicken',d:'Tomato sauce / chicken / cheese',p:'500 DA'},
-          {n:'Minced Meat',d:'Cheese / minced meat / mushrooms',p:'600 DA'},
-          {n:'Tuna',d:'Tomato sauce / tuna / cheese',p:'600 DA'},
-          {n:'Cheese',d:'4 cheeses / white sauce',p:'750 DA'},
-          {n:'Seafood',d:'Tomato sauce / cheese / seafood',p:'850 DA'}]}
-      ], type:'standard'},
-      { id:'tacos-en', icon:'🌮', title:'Tacos', sub:'', cats:[
-        { label:'', items:[
-          {n:'Chicken',p:'550 DA'},{n:'Chicken Double Cheese',p:'700 DA'},
-          {n:'Minced Meat',p:'650 DA'},{n:'Minced Meat Double Cheese',p:'700 DA'}]}
-      ], type:'standard'},
-      { id:'desserts-p-en', icon:'🍦', title:'Desserts & Ice Cream', sub:'', type:'mixed', cats:[
-        { label:'Crêpes', items:[
-          {n:'Jam Crêpe',p:'350 DA'},{n:'Honey Crêpe',p:'350 DA'},
-          {n:'Nutella Crêpe',p:'400 DA'},{n:'Nutella Banana Crêpe',p:'500 DA'}]},
-        { label:'Ice Cream', items:[
-          {n:'1 Scoop',p:'200 DA'},{n:'2 Scoops',p:'350 DA'}]},
-        { label:'Special Cups', type:'ice', items:[
-          {n:'Rainbow Cup',d:'3 assorted flavoured scoops',p:'500 DA'},
-          {n:'Oreo Cup',d:'3 assorted flavoured scoops',p:'550 DA'},
-          {n:'Fruity Freshness Cup',d:'3 assorted flavoured scoops',p:'550 DA'},
-          {n:'Mirador Ice Cream ⭐',d:'4 scoops + fruits + whipped cream',p:'700 DA'},
-          {n:'Cup « Oslo »',d:'5 scoops + fruits + whipped cream',p:'900 DA'}]}
-      ]},
-      { id:'bois-p-en', icon:'🥤', title:'Drinks', sub:'', type:'drinks', cats:[
-        { label:'Cold', type:'grid', items:[
-          {n:'Still Water 0.5L',p:'100 DA'},{n:'Sparkling Water 1.5L',p:'150 DA'},
-          {n:'Still Water 0.5L',p:'100 DA'},{n:'Still Water 1.5L',p:'150 DA'},
-          {n:'Soft Drink 33CL',p:'200 DA'},{n:'Soft Drink Can',p:'200 DA'},
-          {n:'Soft Drink 1L',p:'250 DA'},{n:'Juice 33CL',p:'200 DA'},
-          {n:'Juice 1L',p:'300 DA'},{n:'Fresh Juice',p:'500 DA'}]},
-        { label:'Hot', type:'grid', items:[
-          {n:'Café au Lait',p:'200 DA'},{n:'Black Coffee',p:'200 DA'},
-          {n:'Espresso Capsule',p:'200 DA'},{n:'Cappuccino',p:'200 DA'},
-          {n:'Tea',p:'200 DA'},{n:'Herbal Tea',p:'200 DA'},
-          {n:'Hot Chocolate',p:'200 DA'},{n:'',p:''}]}
-      ]},
-      { id:'packs-en', icon:'🎁', title:'Special Deals', sub:'', type:'packs', packs:[
+      {id:'pizzas-en',icon:'🍕',title:'Our Pizzas',sub:'Pizzeria Belle Vue',type:'standard',brand:true,cats:[
+        {label:'Tomato Sauce',items:[{n:'Margherita',d:'Tomato sauce / cheese / olive',p:'450 DA'},{n:'Vegetarian',d:'Eggplant / zucchini / pepper / onions / cheese / olive',p:'550 DA'},{n:'Forestière',d:'Tomato sauce / cheese / mushrooms / olive',p:'550 DA'},{n:'Minced Meat Bolognese',d:'Minced meat / onion / pepper / cheese / olive',p:'650 DA'},{n:'Marinated Chicken',d:'Cheese / tomato sauce / marinated chicken',p:'650 DA'},{n:'Tuna',d:'Tomato sauce / cheese / olive / tuna',p:'650 DA'},{n:'Fisherman',d:'Tomato sauce / cheese / seafood / olive',p:'800 DA'},{n:'Royale',d:'Shrimp / cheese / olive / squid',p:'850 DA'},{n:'4 Seasons',d:'Minced meat / mushrooms / tuna / chicken / olive / cheese',p:'850 DA'},{n:'4 Cheeses',d:'Camembert / Mozzarella / Cheddar / Gruyère',p:'900 DA'},{n:'Belle Vue Pizza ⭐',d:'Cheese / olive / seafood / minced meat / capers / salami',p:'1000 DA'}]},
+        {label:'White Sauce',items:[{n:'Vegetarian',d:'White sauce / mushrooms / cheese / vegetables / olive',p:'650 DA'},{n:'Chicken',d:'White sauce / cheese / chicken / olive',p:'650 DA'},{n:'4 Cheeses',d:'White sauce / 4 cheeses',p:'900 DA'}]}]},
+      {id:'souffles-en',icon:'🫓',title:'Soufflés',sub:'',type:'standard',cats:[
+        {label:'',items:[{n:'Chicken',d:'Tomato sauce / chicken / cheese',p:'500 DA'},{n:'Minced Meat',d:'Cheese / minced meat / mushrooms',p:'600 DA'},{n:'Tuna',d:'Tomato sauce / tuna / cheese',p:'600 DA'},{n:'Cheese',d:'4 cheeses / white sauce',p:'750 DA'},{n:'Seafood',d:'Tomato sauce / cheese / seafood',p:'850 DA'}]}]},
+      {id:'tacos-en',icon:'🌮',title:'Tacos',sub:'',type:'standard',cats:[
+        {label:'',items:[{n:'Chicken',p:'550 DA'},{n:'Chicken Double Cheese',p:'700 DA'},{n:'Minced Meat',p:'650 DA'},{n:'Minced Meat Double Cheese',p:'700 DA'}]}]},
+      {id:'desserts-p-en',icon:'🍦',title:'Desserts & Ice Cream',sub:'',type:'mixed',cats:[
+        {label:'Crêpes',items:[{n:'Jam Crêpe',p:'350 DA'},{n:'Honey Crêpe',p:'350 DA'},{n:'Nutella Crêpe',p:'400 DA'},{n:'Nutella Banana Crêpe',p:'500 DA'}]},
+        {label:'Ice Cream',items:[{n:'1 Scoop',p:'200 DA'},{n:'2 Scoops',p:'350 DA'}]},
+        {label:'Special Cups',type:'ice',items:[{n:'Rainbow Cup',d:'3 assorted scoops',p:'500 DA'},{n:'Oreo Cup',d:'3 assorted scoops',p:'550 DA'},{n:'Fruity Freshness Cup',d:'3 assorted scoops',p:'550 DA'},{n:'Mirador Ice Cream ⭐',d:'4 scoops + fruits + whipped cream',p:'700 DA'},{n:'Cup « Oslo »',d:'5 scoops + fruits + whipped cream',p:'900 DA'}]}]},
+      {id:'bois-p-en',icon:'🥤',title:'Drinks',sub:'',type:'drinks',cats:[
+        {label:'Cold',type:'grid',items:[{n:'Still Water 0.5L',p:'100 DA'},{n:'Sparkling Water 1.5L',p:'150 DA'},{n:'Still Water 0.5L',p:'100 DA'},{n:'Still Water 1.5L',p:'150 DA'},{n:'Soft Drink 33CL',p:'200 DA'},{n:'Soft Drink Can',p:'200 DA'},{n:'Soft Drink 1L',p:'250 DA'},{n:'Juice 33CL',p:'200 DA'},{n:'Juice 1L',p:'300 DA'},{n:'Fresh Juice',p:'500 DA'}]},
+        {label:'Hot',type:'grid',items:[{n:'Café au Lait',p:'200 DA'},{n:'Black Coffee',p:'200 DA'},{n:'Espresso Capsule',p:'200 DA'},{n:'Cappuccino',p:'200 DA'},{n:'Tea',p:'200 DA'},{n:'Herbal Tea',p:'200 DA'},{n:'Hot Chocolate',p:'200 DA'},{n:'',p:''}]}]},
+      {id:'packs-en',icon:'🎁',title:'Special Deals',sub:'',type:'packs',packs:[
         {title:'🎯 Trio Pack',details:'3 Marinated Chicken Pizzas\n+ 1 Coca Cola 1L FREE',price:'1950 DA'},
         {title:'🎯 Quatro Pack',details:'4 Margherita Pizzas\n+ 1 Coca Cola 1L FREE',price:'1800 DA'},
-        {title:'👶 Kids Pack',details:'1 Mini Pizza + 1 Drink + 1 Dessert',price:'800 DA',special:true}
-      ]}
-    ]
-  }
+        {title:'👶 Kids Pack',details:'1 Mini Pizza + 1 Drink + 1 Dessert',price:'800 DA',special:true}]}
+    ]}
 };
 
-// ═══════════════════════════════════════════
-// STATE
-// ═══════════════════════════════════════════
-let lang='fr', panel='restaurant', secIdx=0;
+let lang='fr',panel='restaurant',secIdx=0;
 
-// ═══════════════════════════════════════════
-// RENDER
-// ═══════════════════════════════════════════
-function buildSections(secs, containerId) {
-  const d = D[lang];
-  let html = '';
-  secs.forEach((s, si) => {
-    const titleEl = s.ar
-      ? `<div class="sec-title-ar">${s.title}</div>`
-      : `<div class="sec-title">${s.title}</div>`;
-    let inner = `<div class="sec-header"><div class="sec-icon">${s.icon}</div>${titleEl}`;
-    if(s.sub) inner += `<div class="sec-sub">${s.sub}</div>`;
-    inner += `<div class="sec-line"><div class="sl"></div><div class="sd"></div><div class="sl r"></div></div></div>`;
-
-    if(s.brand) inner += `<div class="brand-badge"><img src="/mnt/user-data/uploads/642b3120-53e9-43d6-a92e-b2af2b7a29d8-removebg-preview.png" style="width:24px;height:24px;object-fit:contain;" onerror="this.style.display='none'"><span>PIZZERIA BELLE VUE</span></div>`;
-
-    if(s.type === 'packs') {
-      s.packs.forEach(p => {
-        const sp = p.special ? 'background:linear-gradient(135deg,rgba(100,60,10,0.25),rgba(6,16,10,0.6));border-color:rgba(201,168,76,0.3);' : '';
-        const pc = p.special ? 'color:var(--gold2);' : '';
-        inner += `<div class="pack-card" style="${sp}"><div class="ptitle" style="${pc}">${p.title}</div><div class="pdetails">${p.details.replace('\n','<br>')}</div><div class="pbig" style="${pc}">${p.price} <span>/ pack</span></div></div>`;
+function build(secs,cid){
+  const d=D[lang];
+  let h='';
+  secs.forEach((s,si)=>{
+    const tEl=s.ar?`<div class="sec-title-ar">${s.title}</div>`:`<div class="sec-title">${s.title}</div>`;
+    let inner=`<div class="sec-header"><div class="sec-icon">${s.icon}</div>${tEl}`;
+    if(s.sub)inner+=`<div class="sec-sub">${s.sub}</div>`;
+    inner+=`<div class="sec-line"><div class="sl"></div><div class="sd"></div><div class="sl r"></div></div></div>`;
+    if(s.brand)inner+=`<div class="brand-badge"><img src="/mnt/user-data/uploads/642b3120-53e9-43d6-a92e-b2af2b7a29d8-removebg-preview.png" style="width:24px;height:24px;object-fit:contain;" onerror="this.style.display='none'"><span>PIZZERIA BELLE VUE</span></div>`;
+    if(s.type==='packs'){
+      s.packs.forEach(p=>{
+        const sp=p.special?'background:linear-gradient(135deg,rgba(100,60,10,0.25),rgba(6,16,10,0.6));border-color:rgba(201,168,76,0.3);':'';
+        const pc=p.special?'color:var(--gold2);':'';
+        inner+=`<div class="pack-card" style="${sp}"><div class="ptitle" style="${pc}">${p.title}</div><div class="pdetails">${p.details.replace('\n','<br>')}</div><div class="pbig" style="${pc}">${p.price} <span>/ pack</span></div></div>`;
       });
     } else {
-      (s.cats||[]).forEach(cat => {
-        if(cat.label) {
-          const cr = d.dir==='rtl' ? 'style="flex-direction:row-reverse;"' : '';
-          inner += `<div class="cat-row" ${cr}><div class="cat-rule"></div><div class="cat-label">${cat.label}</div><div class="cat-rule"></div></div>`;
-        }
-        if(cat.type==='grid') {
-          inner += `<div class="bois-grid">`;
-          cat.items.forEach(it => inner += `<div class="bitem"><div class="bname">${it.n}</div><div class="bprice">${it.p}</div></div>`);
-          inner += `</div>`;
-        } else if(cat.type==='ice') {
-          cat.items.forEach(it => inner += `<div class="ice"><div class="iname">${it.n}</div>${it.d?`<div class="idesc">${it.d}</div>`:''}<div class="iprice">${it.p}</div></div>`);
-        } else if(s.type==='prestige') {
-          cat.items.forEach(it => inner += `<div class="pitem"><div class="pname">${it.n}</div><div class="pprice">${it.p}</div></div>`);
+      (s.cats||[]).forEach(cat=>{
+        if(cat.label){const cr=d.dir==='rtl'?'style="flex-direction:row-reverse;"':'';inner+=`<div class="cat-row" ${cr}><div class="cat-rule"></div><div class="cat-label">${cat.label}</div><div class="cat-rule"></div></div>`;}
+        if(cat.type==='grid'){
+          inner+=`<div class="bois-grid">`;
+          cat.items.forEach(it=>inner+=`<div class="bitem"><div class="bname">${it.n}</div><div class="bprice">${it.p}</div></div>`);
+          inner+=`</div>`;
+        } else if(cat.type==='ice'){
+          cat.items.forEach(it=>inner+=`<div class="ice"><div class="iname">${it.n}</div>${it.d?`<div class="idesc">${it.d}</div>`:''}<div class="iprice">${it.p}</div></div>`);
+        } else if(s.type==='prestige'){
+          cat.items.forEach(it=>inner+=`<div class="pitem"><div class="pname">${it.n}</div><div class="pprice">${it.p}</div></div>`);
         } else {
-          cat.items.forEach(it => inner += `<div class="mitem"><div><div class="mname">${it.n}</div>${it.d?`<div class="mdesc">${it.d}</div>`:''}</div><div class="mprice">${it.p}</div></div>`);
+          cat.items.forEach(it=>inner+=`<div class="mitem"><div><div class="mname">${it.n}</div>${it.d?`<div class="mdesc">${it.d}</div>`:''}</div><div class="mprice">${it.p}</div></div>`);
         }
       });
     }
-    html += `<div class="section${si===0?' active':''}">${inner}</div>`;
+    h+=`<div class="section${si===0?' active':''}">${inner}</div>`;
   });
-  document.getElementById(containerId).innerHTML = html;
+  document.getElementById(cid).innerHTML=h;
 }
 
-function buildSubNav(secs) {
-  const nav = document.getElementById('sub-nav');
-  nav.innerHTML = secs.map((s,i) =>
-    `<button class="sub-btn${i===0?' active':''}" onclick="showSec(${i})">${s.icon} ${s.title}</button>`
-  ).join('');
-  secIdx = 0;
+function buildSubNav(secs){
+  document.getElementById('sub-nav').innerHTML=secs.map((s,i)=>
+    `<button class="sub-btn${i===0?' active':''}" onclick="showSec(${i})">${s.icon} ${s.title}</button>`).join('');
+  secIdx=0;
 }
 
-function render() {
-  const d = D[lang];
-  document.documentElement.setAttribute('dir', d.dir);
-  document.body.style.direction = d.dir;
-  document.getElementById('hero-welcome').innerHTML = d.welcome;
-  document.getElementById('beach-title').textContent = d.beach_title;
-  document.getElementById('beach-sub').textContent = d.beach_sub;
-  document.getElementById('footer-closing').innerHTML = d.footer;
-  document.getElementById('lbl-restaurant').textContent = d.panel_labels[0];
-  document.getElementById('lbl-pizzeria').textContent = d.panel_labels[1];
-  buildSections(d.restaurant, 'secs-restaurant');
-  buildSections(d.pizzeria, 'secs-pizzeria');
+function render(){
+  const d=D[lang];
+  document.documentElement.setAttribute('dir',d.dir);
+  document.body.style.direction=d.dir;
+  document.getElementById('hero-welcome').innerHTML=d.welcome;
+  document.getElementById('beach-title').textContent=d.beach_title;
+  document.getElementById('beach-sub').textContent=d.beach_sub;
+  document.getElementById('footer-closing').innerHTML=d.footer;
+  document.getElementById('lbl-restaurant').textContent=d.panel_labels[0];
+  document.getElementById('lbl-pizzeria').textContent=d.panel_labels[1];
+  build(d.restaurant,'secs-restaurant');
+  build(d.pizzeria,'secs-pizzeria');
   buildSubNav(d[panel]);
-  // activate correct panel
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
   document.getElementById('panel-'+panel).classList.add('active');
-  document.getElementById('btn-restaurant').classList.toggle('active', panel==='restaurant');
-  document.getElementById('btn-pizzeria').classList.toggle('active', panel==='pizzeria');
+  document.getElementById('btn-restaurant').classList.toggle('active',panel==='restaurant');
+  document.getElementById('btn-pizzeria').classList.toggle('active',panel==='pizzeria');
 }
 
-function switchPanel(p) {
-  panel = p;
+function switchPanel(p){
+  panel=p;
   document.querySelectorAll('.panel').forEach(el=>el.classList.remove('active'));
   document.getElementById('panel-'+p).classList.add('active');
-  document.getElementById('btn-restaurant').classList.toggle('active', p==='restaurant');
-  document.getElementById('btn-pizzeria').classList.toggle('active', p==='pizzeria');
+  document.getElementById('btn-restaurant').classList.toggle('active',p==='restaurant');
+  document.getElementById('btn-pizzeria').classList.toggle('active',p==='pizzeria');
   buildSubNav(D[lang][p]);
   window.scrollTo({top:120,behavior:'smooth'});
 }
 
-function showSec(i) {
-  secIdx = i;
-  const secs = document.querySelectorAll('#panel-'+panel+' .section');
-  secs.forEach((s,si) => s.classList.toggle('active', si===i));
-  document.querySelectorAll('.sub-btn').forEach((b,bi) => b.classList.toggle('active', bi===i));
+function showSec(i){
+  secIdx=i;
+  document.querySelectorAll('#panel-'+panel+' .section').forEach((s,si)=>s.classList.toggle('active',si===i));
+  document.querySelectorAll('.sub-btn').forEach((b,bi)=>b.classList.toggle('active',bi===i));
   window.scrollTo({top:120,behavior:'smooth'});
 }
 
-function setLang(l) {
-  lang = l;
+function setLang(l){
+  lang=l;
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
   document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
   render();
